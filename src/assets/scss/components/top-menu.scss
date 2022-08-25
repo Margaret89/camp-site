@@ -1,0 +1,51 @@
+/*-------------- top-menu -----------------*/
+.top-menu{
+	&,
+	&__item{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	&{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-left: -10px;
+		margin-right: -10px;
+	}
+
+	&__item{
+		padding-left: 12px;
+		position: relative;
+		@include font(none, none, 1.4rem, 1.2, $color-dark);
+		letter-spacing: 1.3px;
+		text-transform: uppercase;
+		margin-left: 10px;
+		margin-right: 10px;
+
+		a{
+			color: $color-dark;
+			text-decoration: none;
+			transition: color 0.2s ease 0s;
+		}
+
+		&.active,
+		a:hover{
+			color: $color-green;
+		}
+	}
+
+	&__item::before{
+		content: '';
+		display: inline-block;
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background: $color-green;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+	}
+}

@@ -1,0 +1,32 @@
+.footer{
+	background: $color-green;
+	padding: 55px 0;
+	@include font(none, none, 2rem, 1.6, #fff);
+
+	&__content{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		column-gap: 80px;
+	}
+
+	&__contact{
+		@include font(none, bold, 2.4rem, 1.5, #fff);
+
+		a{
+			color: #fff;
+			text-decoration: none;
+			transition: color 0.2s ease 0s;
+			white-space: nowrap;
+		}
+
+		a:hover{color: #BFDEBF;}
+	}
+
+	&__copyright{max-width: 372px;}
+	&__text{max-width: 295px;}
+
+	.social{
+		&__item:hover{background: #27ae50;}
+	}
+}

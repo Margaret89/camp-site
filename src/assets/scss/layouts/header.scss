@@ -1,0 +1,73 @@
+.header-top{
+	background: #F9F7FE;
+	padding: 26px 0;
+}
+
+.header-main{
+	padding: 30px 0;
+
+	&__content{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		column-gap: 30px;
+	}
+
+	&__info{
+		display: flex;
+		align-items: center;
+	}
+
+	&__logo{
+		min-width: 126px;
+		flex-shrink: 0;
+	}
+
+	&__company{margin-left: 10px;}
+
+	&__title{
+		font-family: $font-montserrat;
+		@include font(none, bold, 3rem, 1.2, $color-green);
+		text-transform: uppercase;
+	}
+
+	&__address{
+		@include font(none, none, 2rem, 1.2, $color-dark);
+		margin-top: 12px;
+
+		.icon{
+			fill: $color-green;
+			margin-right: 10px;
+			vertical-align: middle;
+		}
+	}
+
+	.social{
+		margin-left: -10px;
+		margin-right: -10px;
+	}
+}
+
+.header-contact{
+	&__item{display: flex;}
+	&__item:not(:last-child){margin-bottom: 7px;}
+
+	&__icon{
+		flex-shrink: 0;
+		margin-right: 10px;
+
+		.icon{fill: $color-green;}
+	}
+
+	&__val{
+		@include font(none, bold, 2.4rem, 1.2, $color-dark);
+
+		a{
+			color: $color-dark;
+			text-decoration: none;
+			transition: color 0.2s ease 0s;
+		}
+
+		a:hover{color: $color-green;}
+	}
+}

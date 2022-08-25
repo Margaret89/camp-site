@@ -1,0 +1,25 @@
+/*-------------- social -----------------*/
+.social{
+	&__item{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 36px;
+		height: 36px;
+		border-radius: 50%;
+		background: #BFDEBF;
+		text-decoration: none;
+		margin: 10px;
+		transition: background 0.2s ease 0s;
+
+		.icon{
+			fill: $color-green;
+			transition: fill 0.2s ease 0s;
+		}
+
+		&:hover{
+			background: $color-green;
+			.icon{fill: #fff;}
+		}
+	}
+}
