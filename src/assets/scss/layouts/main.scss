@@ -85,43 +85,66 @@ main{
 	width: 100%;
 }
 
-// .btn,
-// input[type="submit"].btn,
-// button.btn{
-// 	display: inline-block;
-// 	height: 6rem;
-// 	min-width: 200px;
-// 	background: $color-text;
-// 	border: 1px solid $color-text;
-// 	@include font(normal, 500, 1.3rem, 5.8rem, #fff);
-// 	text-transform: uppercase;
-// 	text-decoration: none;
-// 	text-align: center;
-// 	padding: 0 30px;
-// 	cursor: pointer;
-// 	transition: all 0.2s ease 0s;
-// }
+.btn,
+input[type="submit"].btn,
+button.btn{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 5.8rem;
+	min-width: 200px;
+	background: $color-green;
+	border: none;
+	border-radius: 10px;
+	@include font(none, bold, 1.4rem, 1.4, #fff);
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	padding: 0 30px;
+	cursor: pointer;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
 
-// .btn:hover,
-// input[type="submit"].btn:hover,
-// button.btn:hover{
-// 	background: transparent;
-// 	color: $color-text;
-// }
+	&:hover{color: #fff;}
 
-// .btn_border,
-// input[type="submit"].btn_border,
-// button.btn_border{
-// 	background: transparent;
-// 	color: $color-text;
-// }
+	&_border{
+		background: transparent;
+		border: 2px solid $color-green;
+		color: $color-green;
+	}
 
-// .btn_border:hover,
-// input[type="submit"].btn_border:hover,
-// button.btn_border:hover{
-// 	background: $color-text;
-// 	color: #fff;
-// }
+	&_border:hover{border-color: $color-light-green;}
+
+	&_white{
+		background: #fff;
+		color: $color-green;
+	}
+	
+	&_border.btn_white{
+		background: transparent;
+		border-color: #fff;
+		color: #fff;
+	}
+
+	&_border.btn_white:hover{border-color: $color-light-green;}
+}
+
+.btn{
+	&::after{
+		content: "";
+		height: 0;
+		width: 100%;
+		background: $color-light-green;
+		position: absolute;
+		left: 0;
+		top: 0;
+		transition: height 0.2s ease 0s;
+		z-index: -1;
+	}
+
+	&:hover::after{height: 100%;}
+}
 
 .code{
 	background-color: #f7f7f7;
