@@ -49,11 +49,47 @@ block content
 				p.h5 Это класс с названием h5
 
 				br
+				br
+				br
+				div.h2 Списки
+				ul
+					li Ненумерованный список
+					li Ненумерованный список
+					li Ненумерованный список
+					li Ненумерованный список
+					li Ненумерованный список
+
+				br
+				br
+				ul.list-dot
+					li Ненумерованный список
+					li Ненумерованный список
+					li Ненумерованный список
+					li Ненумерованный список
+					li Ненумерованный список
+
+				br
+				br
+				ol.list-num
+					li Нумерованный список
+					li Нумерованный список
+					li Нумерованный список
+					li Нумерованный список
+					li Нумерованный список
+
+
+				br
 				div.h2 Кнопки
 				a.btn(href='#') Кнопка
 				br
 				br
-				a.btn.btn_border(href='#') Кнопка
+				a.btn.btn_border(href='#')
+					+svg('ic-dots','ic-dots', '21', '22')
+					| Кнопка
+
+				br
+				br
+				a.btn.btn_white-border(href='#') Кнопка
 				br
 				br
 				div(style="background: #1A7E38; padding: 20px;")
@@ -61,6 +97,21 @@ block content
 					br
 					br
 					a.btn.btn_border.btn_white(href='#') Кнопка
+
+				br
+				br
+				br
+				.h2 Раскрывающийся блок
+				.unwrap-block.js-unwrap-block
+					.unwrap-block__head.js-unwrap-head
+						.unwrap-block__icon
+							+svg('ic-question','ic-question', '20', '31')
+
+						.unwrap-block__title Заголовок
+
+						.unwrap-block__btn
+
+					.unwrap-block__content.js-unwrap-content Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.
 
 
 				br
@@ -95,3 +146,23 @@ block content
 						.type-icon__img
 							+svg('ic-telegram','ic-telegram', '16', '16')
 						.type-icon__name ic-telegram
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-calendar','ic-calendar', '24', '24')
+						.type-icon__name ic-calendar
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-tree','ic-tree', '16', '16')
+						.type-icon__name ic-tree
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-dots','ic-dots', '21', '22')
+						.type-icon__name ic-dots
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-question','ic-question', '20', '31')
+						.type-icon__name ic-question

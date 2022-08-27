@@ -1,0 +1,39 @@
+/*-------------- lists -----------------*/
+.list-dot{
+	padding-left: 30px;
+
+	li{
+		list-style: none;
+		position: relative;
+		padding-left: 10px;
+	}
+
+	li:before{
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		width: 4px;
+		height: 4px;
+		border-radius: 50%;
+		background: $color-green;
+		margin-left: -10px;
+		margin-right: 6px;
+	}
+
+	li:not(:last-child){margin-bottom: 8px;}
+}
+
+.list-num{
+	counter-reset: li;
+	list-style: none;
+	counter-reset: li;
+	padding-left: 15px;
+
+	li{
+		list-style: none;
+		position: relative;
+		padding-left: 10px;
+	}
+
+	li:not(:last-child){margin-bottom: 8px;}
+}

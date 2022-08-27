@@ -1,0 +1,515 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Главная';
+
+block content
+	.bg-grad
+		section.quest-form-wrap
+			.container
+				.row
+					.col-12
+						.quest-form-wrap__content
+							form.quest-form
+								.calendar.js-calendar
+									.calendar__item
+										.calendar__label Дата заезда
+
+										.calendar-field
+											.calendar-field__content
+												.calendar__date.js-calendar-date-start
+												.calendar__day.js-calendar-day-start
+
+											.calendar-field__icon
+												+svg('ic-calendar','ic-calendar', '24', '24')
+
+									.calendar__item
+										.calendar__label Дата выезда
+
+										.calendar-field
+											.calendar-field__content
+												.calendar__date.js-calendar-date-end
+												.calendar__day.js-calendar-day-end
+
+											.calendar-field__icon
+												+svg('ic-calendar','ic-calendar', '24', '24')
+
+									.calendar__main.js-calendar-main
+
+							.quest-form-wrap__img
+							
+		section.company
+			.container
+				.row
+					.col-12
+						.anim-tree
+							+svg('ic-tree','ic-tree', '16', '16')
+							+svg('ic-tree','ic-tree', '16', '16')
+							+svg('ic-tree','ic-tree', '16', '16')
+							+svg('ic-tree','ic-tree', '16', '16')
+							+svg('ic-tree','ic-tree', '16', '16')
+							+svg('ic-tree','ic-tree', '16', '16')
+							+svg('ic-tree','ic-tree', '16', '16')
+							+svg('ic-tree','ic-tree', '16', '16')
+
+				.row
+					.col-6
+						.company__content
+							.company__info
+								h2 База отдыха «Лесная купель»
+
+								.info.js-info
+									.info__preview
+										p Турбаза Расположена в живописном лесном массиве на берегу озера Кородское. Это отличное место для проведения самых разных мероприятий: новогодних праздников, свадеб, дней рождений, тим-билдингов корпоративов и спортивных состязаний.
+
+										.count-info
+											-
+												var list=[
+													{num:'5', text:'беседок'},
+													{num:'2', text:'домика'},
+													{num:'1', text:'большой дом'},
+												]
+											each item in list
+												.count-info__item
+													.count-info__num= item.num
+													.count-info__text= item.text
+										
+									.info__desc.js-info-desc
+										p Загородный клуб «Александр» расположен в районе Крекшино. К услугам гостей сад, ресторан, номера с собственной ванной комнатой и телевизором с плоским экраном и спутниковыми каналами.
+										p В каждом номере отеля установлен шкаф. В некоторых номерах есть балкон. Номера оснащены холодильником.
+										p Ежедневно в отеле сервируется завтрак «шведский стол».
+										p Загородный клуб «Александр» располагает детской игровой площадкой. Гости отеля могут заняться различными видами активного отдыха на Крекшино, в том числе пешим туризмом.
+										p Стойка регистрации работает круглосуточно.
+										p Расстояние от загородного клуба «Александр» до Москвы составляет 36 км, а до международного аэропорта 
+
+									.info__bottom
+										.info__btn.js-info-btn(data-val="Свернуть...") читать Подробнее...
+
+							.rating-block-wrap
+								h2 Рейтинг
+
+								.rating-block
+									-
+										var list=[
+											{img:'ya.jpg'},
+											{img:'zoon.jpg'},
+											{img:'yell.jpg'},
+										]
+									each item in list
+										.rating-block__item
+											.rating-block__icon
+												img(src="assets/img/"+item.img, alt="")
+
+											.rating-block__content
+												.rating
+													.rating__count 4.7
+													.rating__main
+														.rating__content(style="width:80%")
+
+												.rating-block__text Оценок : 10
+
+					.col-6
+						h2 Смотреть на карте
+
+						.map
+							iframe(src='https://yandex.ru/map-widget/v1/?um=constructor%3A81f52ce5d2f3f39c9100bb90c3175f3e4174d67549767b3c2a77eb3182d62ba8&source=constructor' width='100%' height='546' frameborder='0')
+
+		.bg-forest
+			section.gallery-wrap
+				.container
+					.row
+						.col-12
+							.gallery
+								a(href="#", style="background-image: url(assets/img/gallery1.jpg)").gallery__item
+								a(href="#", style="background-image: url(assets/img/gallery2.jpg)").gallery__item
+								a(href="#", style="background-image: url(assets/img/gallery3.jpg)").gallery__item
+								a(href="#", style="background-image: url(assets/img/gallery4.jpg)").gallery__item
+								a(href="#", style="background-image: url(assets/img/gallery5.jpg)").gallery__item
+									.btn.btn_white
+										+svg('ic-dots','ic-dots', '21', '22')
+										|еще 50 фото
+
+							.popup-gallery
+								.slider-photo.js-slider-photo
+									-
+										var list=[
+											{img:'gallery1'},
+											{img:'gallery2'},
+											{img:'gallery3'},
+											{img:'gallery4'},
+											{img:'gallery5'},
+											{img:'gallery6'},
+											{img:'gallery1'},
+											{img:'gallery4'},
+											{img:'gallery5'},
+											{img:'gallery2'},
+											{img:'gallery3'},
+										]
+									each item in list
+										.slider-photo__item
+											img(src="assets/img/"+item.img, alt="")
+
+								.slider-photo-thumb.js-slider-photo-thumb
+									-
+										var list=[
+											{img:'gallery1'},
+											{img:'gallery2'},
+											{img:'gallery3'},
+											{img:'gallery4'},
+											{img:'gallery5'},
+											{img:'gallery6'},
+											{img:'gallery1'},
+											{img:'gallery4'},
+											{img:'gallery5'},
+											{img:'gallery2'},
+											{img:'gallery3'},
+										]
+									each item in list
+										.slider-photo-thumb__item(style="background-image: url(assets/img/"+item.img+")")
+
+			section.locations-wrap
+				.container
+					.row
+						.col-12
+							.anim-tree
+								+svg('ic-tree','ic-tree', '16', '16')
+								+svg('ic-tree','ic-tree', '16', '16')
+								+svg('ic-tree','ic-tree', '16', '16')
+								+svg('ic-tree','ic-tree', '16', '16')
+								+svg('ic-tree','ic-tree', '16', '16')
+								+svg('ic-tree','ic-tree', '16', '16')
+								+svg('ic-tree','ic-tree', '16', '16')
+								+svg('ic-tree','ic-tree', '16', '16')
+
+							.locations-wrap__content
+								.h1 Локации
+
+								.locations
+									.locations__sect
+										.locations__item
+											.locations__label Ближайший населенный пункт:
+											.locations__text
+												.locations__param Щелково - 10.3.км
+
+
+										.locations__item
+											.locations__label Расстояние от:
+											.locations__text
+												.locations__param Cеверодвинск - 40.3.км
+
+									.locations__sect
+										.locations__item
+											.locations__label Курорты рядом:
+											.locations__text
+												.locations__param Лисья гора - 4.3.км
+												.locations__param Пирожная гора- 4.3.км
+												.locations__param Абрамцево - 4.3.км
+												.locations__param Чулково-боровской курган- 4.3.км
+
+									.locations__sect
+										.locations__item
+											.locations__label Интересные места рядом:
+											.locations__text
+												.locations__param Река шаловка- 600 м
+												.locations__param Песчанный карьер - 4.3.км
+												.locations__param Церковь святого Павла - 4.3.км
+
+	section.services-wrap
+		.container
+			.row
+				.col-12
+					.anim-tree
+						+svg('ic-tree','ic-tree', '16', '16')
+						+svg('ic-tree','ic-tree', '16', '16')
+						+svg('ic-tree','ic-tree', '16', '16')
+						+svg('ic-tree','ic-tree', '16', '16')
+						+svg('ic-tree','ic-tree', '16', '16')
+						+svg('ic-tree','ic-tree', '16', '16')
+						+svg('ic-tree','ic-tree', '16', '16')
+						+svg('ic-tree','ic-tree', '16', '16')
+
+					h2.h1 Услуги
+
+					.services
+						-
+							var list=[
+								{
+									title:'На свежем воздухе ',
+									sub:[
+										{text:'Место для пикника'},
+										{text:'Садовая мебель'},
+										{text:'Частная пляжная зона'},
+										{text:'Принадлежности для барбекю', note:'Оплачивается отдельно'},
+									]
+								},
+								{
+									title:'Домашние животные ',
+									sub:[
+										{text:'Размещение домашних животных допускается по предварительному запросу. Данная услуга может быть платной. '},
+									]
+								},
+								{
+									title:'Спорт и отдых ',
+									sub:[
+										{text:'Живая музыка/выступление'},
+										{text:'Детская игровая площадка '},
+										{text:'Игровая комната'},
+										{text:'Пляж'},
+										{text:'Бильярд', note:'Оплачивается отдельно'},
+										{text:'Рыбная ловля', note:'Оплачивается отдельно'},
+									]
+								},
+								{
+									title:'Питание и напитки',
+									sub:[
+										{text:'Детское меню', note:'Оплачивается отдельно'},
+										{text:'Вино/шампанско', note:'Оплачивается отдельно'},
+										{text:'Завтрак в номер'},
+										{text:'Бар'},
+										{text:'Ресторан'},
+									]
+								},
+								{
+									title:'Безопасность',
+									sub:[
+										{text:'Видеонаблюдение в местах общего'},
+										{text:'пользования'},
+										{text:'Круглосуточная охрана'},
+										{text:'Сейф'},
+									]
+								},
+								{
+									title:'Общие',
+									sub:[
+										{text:'Общий лаундж / гостиная с телевизором'},
+										{text:'Места для курения'},
+										{text:'Кондиционер'},
+										{text:'Отопление'},
+										{text:'Упакованные ланчи'},
+										{text:'Семейные номера'},
+									]
+								},
+								{
+									title:'Оздоровительные услуги',
+									sub:[
+										{text:'Пакеты услуг спа/велнесс'},
+										{text:'Спа-процедуры'},
+										{text:'Пилинг для тела'},
+										{text:'Уход за телом'},
+										{text:'Укладка'},
+										{text:'Косметические услуги'},
+										{text:'Турецкая баня', note:'Оплачивается отдельно'},
+									]
+								},
+								{
+									title:'Услуги уборки ',
+									sub:[
+										{text:''},
+										{text:'Ежедневная уборка'},
+										{text:'Услуги по глажению одежды', note:'Оплачивается отдельно'},
+										{text:'Прачечная', note:'Оплачивается отдельно'},
+									]
+								},
+								{
+									title:'Стойка регистрации ',
+									sub:[
+										{text:'Индивидуальная регистрация заезда/отъезда'},
+										{text:'Круглосуточная стойка регистрации'},
+									]
+								},
+							]
+						each sect in list
+							.services__sect
+								.services__title= sect.title
+
+								.services__list
+									each sub in sect.sub
+										.services__item= sub.text
+
+										if(sub.note)
+											.services__note= sub.note
+
+	section.path-wrap
+		.container
+			.row
+				.col-12
+					h2.h1 Как добраться
+
+			.row
+				.col-4
+					.path-item
+						.path-item__title На автомобиле:
+						.path-item__text 15 км по Горьковскому шоссе, после указателя «Ногинский район», проехав до ближайшего разворота, развернуться и ехать в обратном направлении. Далее повернуть с трассы направо и ехать через коттеджный поселок в мкр. Шевелкино-4 до центральных ворот базы отдыха.
+
+				.col-4
+					.path-item
+						.path-item__title Общественным транспортом:
+						.path-item__text
+							|от м. Партизанская — автобусы № 322 и № 444; экспрессы № 322, 382, 444, 445, 375, 386, 391;
+							br
+							|от м. Измайловская - автобус №588;
+							br
+							|от м. Перово — автобус № 587 и маршрутное такси № 886 до остановки «Зеленый», затем необходимо перейти Горьковское шоссе, далее – пешком, следуя указателям, около 2 км до базы отдыха.
+
+				.col-4
+					.path-item
+						.path-item__title Из Московской области:
+						.path-item__text Любой автобус или маршрутное такси, следующее в Москву по Горьковскому шоссе до остановки «Зеленый». Далее – пешком, следуя указателям, около 2 км до базы отдыха.
+
+						.path-item__subtitle Скопировать координаты:
+						.path-item__text 55.827421, 38.076584
+
+			.row
+				.col-12
+					.map
+						iframe(src='https://yandex.ru/map-widget/v1/?um=constructor%3A81f52ce5d2f3f39c9100bb90c3175f3e4174d67549767b3c2a77eb3182d62ba8&source=constructor' width='100%' height='432' frameborder='0')
+
+	section.conditions-wrap
+		.container
+			.row
+				.col-12
+					.anim-tree
+						+svg('ic-tree','ic-tree', '16', '16')
+						+svg('ic-tree','ic-tree', '16', '16')
+						+svg('ic-tree','ic-tree', '16', '16')
+						+svg('ic-tree','ic-tree', '16', '16')
+						+svg('ic-tree','ic-tree', '16', '16')
+						+svg('ic-tree','ic-tree', '16', '16')
+						+svg('ic-tree','ic-tree', '16', '16')
+						+svg('ic-tree','ic-tree', '16', '16')
+
+					h2.h1 Условия проживания
+
+					.conditions
+						.conditions__list
+							.conditions__item
+								.conditions__title Предоплата
+								.conditions__text Необходимо внести предоплату в течение 1 суток после получения подтверждения
+							
+							.conditions__item
+								.conditions__title Отмена
+								.conditions__text Условия отмены будут указаны при подтверждении
+							
+							.conditions__item
+								.conditions__title Размещение детей
+								.conditions__text Бесплатно без предоставления места до 7 лет 
+							
+							.conditions__item
+								.conditions__title Расчетные часы:
+								.conditions__text
+									|Регистрация заезда — 16:00
+									br
+									|выезд — 14:00
+							
+							.conditions__item
+								.conditions__title Особые условия
+								.conditions__text
+									p В летний период с каждого мужчины обязательно взимается плата за круглосуточную рыбалку – 3300 руб/сутки.
+									p Рыбалка на пруду № 1: ловится щука, судак, окунь, плотва, карась. Рыбалку оплачивает каждый мужчина - 1000 руб в сутки.
+
+						.conditions__bottom
+							.conditions__star *
+							.conditions__note Обратите внимание, что для бронирований на периоды государственных праздников бесплатная отмена возможна за 30 суток до даты заезда.
+								br
+								|В случае отмены бронирования менее, чем за 30 суток до заезда, штраф составит 100% от предоплаты.
+
+	section.review-slider-wrap
+		.container
+			.row
+				.col-12
+					.review-slider-wrap__top
+						h2.h1 Отзывы наших гостей
+						.btn-wrap.js-btn-review-slider
+
+					.review-slider.js-review-slider
+						-
+							var list=[
+								{img:'man.png', name:'Андрей Романов', date:'11.08.2022', text:'Всем остались довольны, отдых здесь приносит только положительные впечатления. Территория ухоженная и весьма аккуратная. Вокруг тишина. Приветливая хозяйка, которая ответит на все возникшие у вас вопросы. В общем, советую посетить данное место, вам обязательно понравится.'},
+								{img:'woman.png', name:'Мария', date:'11.08.2022', text:'В связи с пандемией - Окулова Заимка оказалась самым безопасным местом для отдыха. Отдельные дома изолируют гостей от ненужного общения. Комплекс отдыха «Окулова Заимка» находится в одном из самых живописных и экологически чистых мест ближнего Подмосковья - Истринском районе.'},
+								{img:'woman.png', name:'Мария', date:'11.08.2022', text:'В связи с пандемией - Окулова Заимка оказалась самым безопасным местом для отдыха. Отдельные дома изолируют гостей от ненужного общения. Комплекс отдыха «Окулова Заимка» находится в одном из самых живописных и экологически чистых мест ближнего Подмосковья - Истринском районе.'},
+								{img:'man.png', name:'Андрей Романов', date:'11.08.2022', text:'Всем остались довольны, отдых здесь приносит только положительные впечатления. Территория ухоженная и весьма аккуратная. Вокруг тишина. Приветливая хозяйка, которая ответит на все возникшие у вас вопросы. В общем, советую посетить данное место, вам обязательно понравится.'},
+							]
+						each item in list
+							.review-item
+								.review-item__top
+									.review-item__img(style="background-image: url(assets/img/"+item.img+")")
+
+									.review-item__info
+										.review-item__name= item.name
+										.review-item__date= item.date
+
+								.review-item__text= item.text
+
+	section.faq
+		.container
+			.row
+				.col-12
+					h2.h1 FAQ
+
+					-
+						var list=[
+							{title:'За какое время следует бронировать номер?', text:'Текст'},
+							{title:'За какое время следует бронировать номер?', text:'Полномочия Института в качестве экспертной организации для проведения аккредитационной экспертизы в рамках Государственной аккредитации образовательной деятельности установлены Распоряжением Федеральной службы по надзору в сфере образования и науки № 1093–06 от 11 июля 2018 года. За время осуществления деятельности в качестве экспертной организации Институт принял участие более, чем в 40 аккредитационных экспертизах. Перечень привлекаемых экспертной организацией экспертов насчитывает 89 аттестованных Институтом экспертов'},
+							{title:'В связи с пандемией - данное место безопасно для отдыха? Отдельные дома изолируют гостей от ненужного общения? Как проводится санитарная обработка территории?', text:'Текст'},
+							{title:'За какое время следует бронировать номер?', text:'Текст'},
+						]
+					each item in list
+						.unwrap-block.js-unwrap-block
+							.unwrap-block__head.js-unwrap-head
+								.unwrap-block__icon
+									+svg('ic-question','ic-question', '20', '31')
+
+								.unwrap-block__title Заголовок
+
+								.unwrap-block__btn
+
+							.unwrap-block__content.js-unwrap-content Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.
+
+	secttion.about
+		.container
+			.row
+				.col-12
+					.anim-tree
+						+svg('ic-tree','ic-tree', '16', '16')
+						+svg('ic-tree','ic-tree', '16', '16')
+						+svg('ic-tree','ic-tree', '16', '16')
+						+svg('ic-tree','ic-tree', '16', '16')
+						+svg('ic-tree','ic-tree', '16', '16')
+						+svg('ic-tree','ic-tree', '16', '16')
+						+svg('ic-tree','ic-tree', '16', '16')
+						+svg('ic-tree','ic-tree', '16', '16')
+
+					h2.h1 Текстовый блок H1
+
+			.row
+				.col-12.clearfix
+					img(src="assets/img/windmill.jpg", alt="").img-left
+
+					p Загородный клуб «Александр» расположен в районе Крекшино. К услугам гостей сад, ресторан, номера с собственной ванной комнатой и телевизором с плоским экраном и спутниковыми каналами. В каждом номере отеля установлен шкаф. В некоторых номерах есть балкон. Номера оснащены холодильником. Ежедневно в отеле сервируется завтрак «шведский стол». Загородный клуб «Александр» располагает детской игровой площадкой. Гости отеля могут заняться различными видами активного отдыха на Крекшино, в том числе пешим туризмом. Стойка регистрации работает круглосуточно. Расстояние от загородного клуба «Александр» до Москвы составляет 36 км, а до международного аэропорта 
+
+					h2 Заголовок Н2
+
+					p Классный домик и банька супер! Парная в новом состоянии. Случайно нашли баню и поехали. Снимали на сутки. Домик понравился комфортом, дизайном. Администраторы отлично встретили и проводили. Были один раз, но хотим ещё.Классный домик и банька супер! Парная в новом состоянии. Случайно нашли баню и поехали. Снимали на сутки. Домик понравился комфортом, дизайном. Администраторы отлично встретили и проводили. Были один раз, но хотим ещё.Классный домик и банька супер! Парная в новом состоянии. Случайно нашли баню и поехали. Снимали на сутки. Домик понравился комфортом, дизайном. Администраторы отлично встретили и проводили. Были один раз, но хотим ещё.
+
+					h3 Лояльные требования Н3
+
+					p Микрозаём — это небольшой кредит наличными, выдаваемый микрокредитными организациями. Больше всего такой вид займа подходит для потребительских нужд, когда деньги требуются срочно и нет возможности у кого-либо взять в долг до зарплаты. Микрозаймы выдаются на непродолжительные сроки и на максимально упрощенных условиях.
+
+					h4 Заголовок Н4
+
+					p Главная цель обращения клиента в компанию – быстро получить необходимую сумму под низкий процент. Предпосылки возникновения потребности в деньгах различны:
+
+					.row
+						.col-3
+							ul.list-dot
+								li поехать в путешествие;  
+								li поехать в отпуск; 
+								li поправать в озере; 
+								li поехать в путешествие заграницу;
+
+						.col-3
+							ol.list-num
+								li поехать в путешествие заграницу; 
+								li поехать в путешествие заграницу; 
+								li поехать в путешествие заграницу; 
+

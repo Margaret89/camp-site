@@ -1,0 +1,43 @@
+/*-------------- conditions -----------------*/
+.conditions{
+	&__list{
+		column-count: 2;
+		column-gap: 30px;
+	}
+
+	&__title{
+		font-family: $font-montserrat;
+		@include font(none, 600, 1.8rem, 1.4, $color-dark);
+		margin-bottom: 10px;
+		position: relative;
+
+		&::before{
+			content: '';
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			position: absolute;
+			top: 0;
+			left: -10px;
+			opacity: 0.7;
+		}
+	}
+
+	&__sect:nth-child(4n+1) &__title::before{background: #79C175;}
+	&__sect:nth-child(4n+2) &__title::before{background: #FFB198;}
+	&__sect:nth-child(4n+3) &__title::before{background: #F0BB1F;}
+	&__sect:nth-child(4n+4) &__title::before{background: #C8CBEE;}
+
+	&__text{
+		@include font(none, none, 1.6rem, 1.5, none);
+	}
+
+	&__bottom{margin-top: 20px;}
+
+	&__star{
+		font-family: $font-montserrat;
+		@include font(none, bold, 4.2rem, 1, #DF6951);
+		margin-bottom: 10px;
+	}
+}

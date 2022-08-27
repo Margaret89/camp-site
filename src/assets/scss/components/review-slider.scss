@@ -1,0 +1,59 @@
+/*-------------- review-slider -----------------*/
+.review-slider-wrap{
+	padding: 80px 0;
+	background: url(../img/bg-forest.jpg) no-repeat center;
+
+	&__top{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.btn-arr{
+		border-color: #fff;
+		.icon{fill: #fff;}
+		&:hover{background: rgba(255,255,255,0.4);}
+	}
+
+	.slick-dots{
+		button{background: rgba(255,255,255,0.4);}
+
+		button:hover,
+		.slick-active button{
+			background: #fff;
+		}
+	}
+}
+
+.review-item{
+	background: #fff url(../img/quote.png) no-repeat 45px calc(100% - 40px);
+	border-radius: 10px;
+	padding: 40px;
+
+	&__top{
+		display: flex;
+		align-items: center;
+		margin-bottom: 20px;
+	}
+
+	&__img{
+		flex-shrink: 0;
+		width: 74px;
+		height: 74px;
+		border-radius: 50%;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		margin-right: 20px;
+	}
+
+	&__name{
+		font-family: $font-montserrat;
+		@include font(none, 600, 1.8rem, 1.4, $color-dark);
+	}
+
+	&__date{
+		@include font(none, none, 1.4rem, 1.2, $color-text);
+		margin-top: 10px;
+	}
+}

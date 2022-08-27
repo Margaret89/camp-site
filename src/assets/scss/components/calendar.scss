@@ -1,0 +1,40 @@
+/*-------------- calendar -----------------*/
+.calendar{
+	&__item{margin-bottom: 20px;}
+
+	&__label{
+		@include font(none, none, 1.2rem, 1.2, $color-text);
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		margin-bottom: 10px;
+	}
+}
+
+.calendar-field{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 5.6rem;
+	border-radius: 10px;
+	background: #fff;
+	padding: 10px 15px;
+
+	&__icon{
+		flex-shrink: 0;
+		margin-left: 10px;
+
+		.icon{fill: $color-green;}
+	}
+
+	&__date{
+		@include font(none, bold, 1.4rem, 1.2, $color-dark);
+		text-transform: uppercase;
+	}
+
+	&__day{
+		@include font(none, none, 1.4rem, 1.2, $color-text);
+		margin-top: 5px;
+	}
+
+	&__main{margin: -10px 0 -60px;}
+}

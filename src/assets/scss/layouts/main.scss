@@ -50,26 +50,27 @@ h1,.h1{
 h2,.h2{
 	font-size: 2.4rem;
 	margin-bottom: 2rem;
-	margin-top: 4rem;
 }
 
 h3,.h3{
 	font-size: 2rem;
 	margin-bottom: 2rem;
-	margin-top: 4rem;
 }
 
 h4,.h4{
 	font-size: 1.8rem;
 	margin-bottom: 2rem;
-	margin-top: 4rem;
 }
 
 h5,.h5{
 	font-size: 1.6rem;
 	margin-bottom: 2rem;
-	margin-top: 4rem;
 }
+
+p + h2, p + .h2, ol + h2, ol + .h2, ul + h2, ul + .h2{margin-top: 4rem;}
+p + h3, p + .h3, ol + h3, ol + .h3, ul + h3, ul + .h3{margin-top: 4rem;}
+p + h4, p + .h4, ol + h4, ol + .h4, ul + h4, ul + .h4{margin-top: 4rem;}
+p + h5, p + .h5, ol + h5, ol + .h5, ul + h5, ul + .h5{margin-top: 4rem;}
 
 .wrapper{
 	display: flex;
@@ -128,6 +129,17 @@ button.btn{
 	}
 
 	&_border.btn_white:hover{border-color: $color-light-green;}
+
+	&_white-border{
+		background: #fff;
+		color: $color-green;
+		border: 2px solid $color-green;
+	}
+
+	&_white-border:hover{
+		border-color: $color-light-green;
+		color: #fff;
+	}
 }
 
 .btn{
@@ -162,3 +174,13 @@ button.btn{
 .text-justify{text-align: justify !important;}
 .text-uppercase{text-transform: uppercase !important;}
 .text-bold {font-weight: 700 !important;}
+
+.bg-grad{
+	background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), linear-gradient(179.21deg, #ECECF5 0.65%, rgba(255, 255, 255, 0) 33.46%), #F9F7FE;
+}
+
+.img-left{
+	float: right;
+	border-radius: 20px;
+	margin: 0 0 30px 30px;
+}

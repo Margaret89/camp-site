@@ -1,0 +1,53 @@
+/*-------------- rating -----------------*/
+.rating-block{
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -10px;
+	margin-right: -10px;
+
+	&__item{
+		display: inline-flex;
+		align-items: center;
+		margin: 10px;
+		border-radius: 8px;
+		background: #fff;
+		padding: 10px;
+		box-shadow: 0px 94.9926px 75.9941px rgba(0, 0, 0, 0.02), 0px 61.5693px 44.5058px rgba(0, 0, 0, 0.0151852), 0px 36.5898px 24.2055px rgba(0, 0, 0, 0.0121481), 0px 18.9985px 12.349px rgba(0, 0, 0, 0.01), 0px 7.74014px 6.19211px rgba(0, 0, 0, 0.00785185), 0px 1.75912px 2.99051px rgba(0, 0, 0, 0.00481481);
+	}
+
+	&__icon{
+		flex-shrink: 0;
+		margin-right: 10px;
+	}
+
+	&__text{
+		@include font(none, none, 1rem, 1.2, $color-text);
+		margin-top: 10px;
+	}
+}
+
+.rating{
+	display: inline-flex;
+	align-items: center;
+
+	&__count{
+		@include font(none, none, 1.4rem, 1.2, $color-dark);
+		margin-right: 10px;
+	}
+
+	&__main{
+		width: 80px;
+		height: 17px;
+		position: relative;
+		background: url(../img/stars.png) repeat-x 0 0;
+	}
+
+	&__content{
+		width: 0;
+		height: 100%;
+		background: url(../img/stars.png) repeat-x 0 17px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}

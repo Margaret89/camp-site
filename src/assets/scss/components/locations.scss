@@ -1,0 +1,45 @@
+/*-------------- locations -----------------*/
+.locations-wrap{
+	margin: 120px 0;
+
+	&__content{
+		background: #fff;
+		border-radius: 20px;
+		padding: 80px 60px;
+	}
+}
+
+.locations{
+	display: flex;
+	flex-wrap: wrap;
+
+	&__sect:not(:nth-child(3n)){
+		margin-right: 222px;
+		margin-bottom: 20px;
+	}
+
+	&__sect:not(:nth-child(3n))::after{
+		content: '';
+		display: block;
+		width: 1px;
+		height: 100%;
+		background: rgba(94,98,130,0.3);
+		position: absolute;
+		top: 0;
+		right: -111px;
+	}
+
+	&__label{
+		@include font(none, bold, 1.6rem, 1.75, $color-dark);
+		margin-bottom: 5px;
+	}
+
+	&__text{
+		@include font(none, none, 1.6rem, 1.75, none);
+	}
+}
+
+.bg-forest{
+	padding-bottom: 1px;
+	background: url(../img/bg-field.jpg) no-repeat bottom center;
+}

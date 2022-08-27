@@ -5,4 +5,6 @@ import $ from 'jquery';
 // import 'slick-slider/slick/slick.min.js';
 // import Inputmask from "inputmask";
 
-export {$};
+import AirDatepicker from 'air-datepicker';
+
+export {$, AirDatepicker};
