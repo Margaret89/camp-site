@@ -49,3 +49,22 @@
 		transform: translateY(-50%);
 	}
 }
+
+@media (max-width: 1239px) {
+	.top-menu{
+		&__item{font-size: 1.2rem;}
+	}
+}
+
+@media (max-width: 991px) {
+	.top-menu{
+		display: block;
+		margin: 0;
+		border-bottom: 1px solid rgba(94,98,130,0.4);
+
+		&__item{
+			font-size: 1.4rem;
+			margin: 0 0 28px;
+		}
+	}
+}

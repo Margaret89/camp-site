@@ -8,6 +8,12 @@ body{
 
 body{font-size: 1.6rem;}
 
+body.no-scroll{
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
 *,
 *:before,
 *:after {
@@ -79,6 +85,7 @@ p + h5, p + .h5, ol + h5, ol + .h5, ul + h5, ul + .h5{margin-top: 4rem;}
 	min-height: 100vh;
 	width: 100%;
 	margin: 0 auto;
+	overflow: hidden;
 }
 
 main{
@@ -110,6 +117,7 @@ button.btn{
 	overflow: hidden;
 
 	.icon{
+		flex-shrink: 0;
 		fill: $color-green;
 		transition: fill 0.2s ease 0s;
 	}
@@ -201,4 +209,21 @@ button.btn{
 	float: right;
 	border-radius: 20px;
 	margin: 0 0 100px 120px;
+}
+
+@media (max-width: 1599px) {
+	.img-left{max-width: 50%;}
+}
+
+@media (max-width: 991px) {
+	.img-left{margin: 0 0 30px 30px;}
+}
+
+@media (max-width: 767px) {
+	.container,
+	.container-sm{
+		max-width: 100%!important;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
 }

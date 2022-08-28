@@ -1,58 +1,78 @@
 header.header
-	.header-top
-		.container
-			.row
-				.col-12
-					ul.top-menu
-						-
-							var list=[
-								{text:'Галерея'},
-								{text:'Локации'},
-								{text:'Услуги'},
-								{text:'карта'},
-								{text:'Отзывы'},
-								{text:'Как добраться'},
-								{text:'Условия проживания'},
-								{text:'Отзывы'},
-								{text:'FAQ'},
-							]
-						each item in list
-							li.top-menu__item
-								a(href="#")= item.text
+	.header-wrap.js-header-wrap
+		.header-top
+			.container
+				.row
+					.col-12
+						ul.top-menu
+							-
+								var list=[
+									{text:'Галерея'},
+									{text:'Локации'},
+									{text:'Услуги'},
+									{text:'карта'},
+									{text:'Отзывы'},
+									{text:'Как добраться'},
+									{text:'Условия проживания'},
+									{text:'Отзывы'},
+									{text:'FAQ'},
+								]
+							each item in list
+								li.top-menu__item
+									a(href="#")= item.text
 
-	.header-main
+		.header-main
+			.container
+				.row
+					.col-12
+						.header-main__content
+							.header-main__info
+								.header-main__logo
+									a(href="#")
+										img(src="assets/img/logo.png", alt="Logo")
+
+								.header-main__company
+									.header-main__title База отдыха Лесная Купель
+									.header-main__address
+										+svg('ic-address','ic-address', '18', '24')
+										|Муниципальное образование Cеверодвинск
+
+
+							.header-contact
+								.header-contact__item
+									.header-contact__icon
+										+svg('ic-phone','ic-phone', '24', '25')
+									.header-contact__val
+										a(href="tel:+79115746202") +7 (911) 574-62-02
+
+							.social
+								a(href="#").social__item
+									+svg('ic-vk','ic-vk', '21', '12')
+
+								a(href="#").social__item
+									+svg('ic-ok','ic-ok', '11', '18')
+
+								a(href="#").social__item
+									+svg('ic-instagram','ic-instagram', '16', '16')
+
+								a(href="#").social__item
+									+svg('ic-telegram','ic-telegram', '16', '16')
+	.header-mobile.d-lg-none
 		.container
 			.row
 				.col-12
-					.header-main__content
-						.header-main__info
-							.header-main__logo
+					.header-mobile__content
+						.header-mobile__info
+							.header-mobile__logo
 								a(href="#")
-									img(src="assets/img/logo.png", alt="Logo")
+									img(src="assets/img/logo-small.png", alt="Logo")
 
-							.header-main__company
-								.header-main__title База отдыха Лесная Купель
-								.header-main__address
-									+svg('ic-address','ic-address', '18', '24')
-									|Муниципальное образование Cеверодвинск
+							.header-mobile__title База отдыха Лесная Купель
 
+						.header-mobile__action
+							a(href="tel:+79115746202").header-mobile__phone
+								+svg('ic-phone','ic-phone', '28', '30')
 
-						.header-contact
-							.header-contact__item
-								.header-contact__icon
-									+svg('ic-phone','ic-phone', '24', '25')
-								.header-contact__val
-									a(href="tel:+79115746202") +7 (911) 574-62-02
-
-						.social
-							a(href="#").social__item
-								+svg('ic-vk','ic-vk', '21', '12')
-
-							a(href="#").social__item
-								+svg('ic-ok','ic-ok', '11', '18')
-
-							a(href="#").social__item
-								+svg('ic-instagram','ic-instagram', '16', '16')
-
-							a(href="#").social__item
-								+svg('ic-telegram','ic-telegram', '16', '16')
+							.header-mobile__menu.js-open-menu
+								+svg('ic-burger','ic-burger', '31', '31')
+								+svg('ic-burger-active','ic-burger-active', '31', '31')

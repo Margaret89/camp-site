@@ -30,3 +30,18 @@
 		&__item:hover{background: #27ae50;}
 	}
 }
+
+@media (max-width: 1239px) {
+	.footer{
+		&__content{
+			flex-wrap: wrap;
+			column-gap: 30px;
+			row-gap: 30px;
+		}
+
+		&__copyright,
+		&__text{
+			width: 50%;
+		}
+	}
+}

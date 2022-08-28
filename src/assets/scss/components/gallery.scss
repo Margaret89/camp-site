@@ -53,6 +53,22 @@
 
 .popup-gallery{
 	width: 1400px;
+	max-width: calc(100vw - 60px);
 	display: none;
 	padding: 80px;
+}
+
+@media (max-width: 991px) {
+	.gallery-wrap{margin: 80px 0;}
+
+	.gallery{
+		&__item{
+			.btn{
+				padding: 0 10px;
+				min-width: 140px;
+				text-align: center;
+				justify-content: center;
+			}
+		}
+	}
 }

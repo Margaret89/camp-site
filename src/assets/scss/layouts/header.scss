@@ -53,6 +53,7 @@
 	&__item:not(:last-child){margin-bottom: 7px;}
 
 	&__icon{
+		display: block;
 		flex-shrink: 0;
 		margin-right: 10px;
 
@@ -69,5 +70,172 @@
 		}
 
 		a:hover{color: $color-green;}
+	}
+}
+
+@media (max-width: 1599px) {
+	.header-main{
+		&__company{max-width: 400px;}
+	}
+}
+
+@media (max-width: 1239px) {
+	.header-main{
+		&__title{font-size: 2.4rem;}
+
+		&__address{
+			font-size: 1.6rem;
+
+			.ic-address{
+				width: 14px;
+				height: 21px;
+			}
+		}
+
+		.social{
+			max-width: 120px;
+			margin-left: -5px;
+			margin-right: -5px;
+		}
+	}
+
+	.header-contact{
+		&__val{font-size: 2rem;}
+		&__icon{max-width: 20px;}
+	}
+}
+
+@media (max-width: 991px) {
+	.header-wrap{
+		height: calc(100vh - 60px);
+		width: 100vw;
+		background: #fff;
+		position: fixed;
+		top: 60px;
+		left: -100vw;
+		z-index: 1000;
+		transition: all 0.3s ease 0s;
+		overflow-y: auto;
+
+		&.open{left: 0;}
+	}
+
+	.header-top{
+		background: transparent;
+		padding: 30px 0;
+	}
+
+	.header-main{
+		padding: 12px 0;
+
+		&__content{display: block;}
+
+		&__logo,
+		&__title{
+			display: none;
+		}
+
+		&__company{
+			max-width: none;
+			margin-left: 0;
+		}
+
+		&__address{
+			line-height: 1.625;
+			margin-top: 0;
+			padding-left: 30px;
+			position: relative;
+
+			.ic-address{
+				width: 18px;
+				height: 24px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+
+		.social{
+			max-width: none;
+			margin: 15px -10px 0;
+		}
+	}
+
+	.header-contact{
+		margin-top: 25px;
+
+		&__val{font-size: 1.6rem;}
+
+		&__icon{
+			max-width: none;
+			.icon{display: block;}
+		}
+	}
+
+	.header-mobile{
+		&__content{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			height: 6rem;
+			padding: 10px 0;
+		}
+
+		&__info{
+			display: inline-flex;
+			align-items: center;
+		}
+
+		&__logo{
+			flex-shrink: 0;
+			margin-right: 5px;
+
+			img{max-height: 40px;}
+		}
+
+		&__title{
+			font-family: $font-montserrat;
+			@include font(none, bold, 1.4rem, 1.4, $color-green);
+			text-transform: uppercase;
+		}
+
+		&__action{
+			display: inline-flex;
+			align-items: center;
+			flex-shrink: 0;
+			margin-left: 20px;
+		}
+
+		&__phone{
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0;
+
+			.icon{fill: $color-green;}
+		}
+
+		&__menu{
+			position: relative;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0;
+			width: 31px;
+			height: 31px;
+			position: relative;
+			margin-left: 30px;
+			cursor: pointer;
+
+			.icon{
+				fill: $color-green;
+				position: absolute;
+				top: 0;
+				left: 0;
+				transition: opacity 0.3s ease 0s;
+			}
+
+			&.active .ic-burger{opacity: 0;}
+		}
 	}
 }

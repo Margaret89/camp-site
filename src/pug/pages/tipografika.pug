@@ -101,6 +101,17 @@ block content
 				br
 				br
 				br
+				.h2 Нестандартный select
+				select.js-select(data-placeholder="Как вы узнали о нас?")
+					option(value="") Как вы узнали о нас?
+					option(value="Вариант 1") Вариант 1
+					option(value="Вариант 2") Вариант 2
+					option(value="Вариант 3") Вариант 3
+					option(value="Вариант 4") Вариант 4
+
+				br
+				br
+				br
 				.h2 Раскрывающийся блок
 				.unwrap-block.js-unwrap-block
 					.unwrap-block__head.js-unwrap-head
@@ -186,3 +197,13 @@ block content
 						.type-icon__img
 							+svg('ic-arr-right','ic-arr-right ic-stroke', '12', '22')
 						.type-icon__name ic-arr-right
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-burger','ic-burger', '31', '31')
+						.type-icon__name ic-burger
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-burger-active','ic-burger-active', '31', '31')
+						.type-icon__name ic-burger-active

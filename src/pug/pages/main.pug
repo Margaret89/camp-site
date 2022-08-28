@@ -15,7 +15,7 @@ block content
 									.calendar__item
 										.calendar__label Дата заезда
 
-										.calendar-field
+										.calendar-field.js-calendar-field
 											.calendar-field__content
 												.calendar-field__date.js-calendar-date-start
 												.calendar-field__day.js-calendar-day-start
@@ -26,7 +26,7 @@ block content
 									.calendar__item
 										.calendar__label Дата выезда
 
-										.calendar-field
+										.calendar-field.js-calendar-field
 											.calendar-field__content
 												.calendar-field__date.js-calendar-date-end
 												.calendar-field__day.js-calendar-day-end
@@ -36,6 +36,24 @@ block content
 
 									.calendar__main.js-calendar-main
 
+								.quest-form__fields.d-md-none
+									.quest-form__item
+										.quest-form__label Гостей
+										.quest-form__field
+											select.js-select
+												option(value="1") 1
+												option(value="2") 2
+												option(value="3") 3
+												option(value="4") 4
+
+									.quest-form__item
+										.quest-form__label телефон
+										.quest-form__field
+											input(type="text").js-phone
+
+								.quest-form__btn.d-md-none
+									a.btn.btn_border.btn_white(href='#') отправить заявку
+											
 							.quest-form-wrap__img
 							
 		section.company
@@ -54,7 +72,7 @@ block content
 							+svg('ic-tree','ic-tree', '16', '16')
 
 				.row
-					.col-6
+					.col-lg-6
 						.company__content
 							.company__info
 								h2 База Отдыха «Лесная купель» 
@@ -109,7 +127,7 @@ block content
 
 												.rating-block__text Оценок : 10
 
-					.col-6
+					.col-6.d-none.d-lg-block
 						.company__map
 							h2 Смотреть на карте
 
@@ -514,14 +532,14 @@ block content
 
 					br
 					.row
-						.col-3
+						.col-md-4.col-xl-3
 							ul.list-dot
 								li поехать в путешествие;  
 								li поехать в отпуск; 
 								li поправать в озере; 
 								li поехать в путешествие заграницу;
 
-						.col-3
+						.col-md-4.col-xl-3
 							ol.list-num
 								li поехать в путешествие заграницу; 
 								li поехать в путешествие заграницу; 

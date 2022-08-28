@@ -69,3 +69,8 @@
 		margin-bottom: 18px;
 	}
 }
+
+@media (max-width: 991px) {
+	.path-list{display: block;}
+	.path-item{width: auto;}
+}

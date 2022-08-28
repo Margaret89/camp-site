@@ -20,10 +20,8 @@
 	display: flex;
 	flex-wrap: wrap;
 
-	&__sect{position: relative;}
-
-	&__sect:not(:nth-child(3n)){
-		margin-right: 222px;
+	&__sect{
+		position: relative;
 		margin-bottom: 20px;
 	}
 
@@ -35,7 +33,6 @@
 		background: rgba(94,98,130,0.3);
 		position: absolute;
 		top: 0;
-		right: -111px;
 	}
 
 	&__label{
@@ -52,4 +49,33 @@
 .bg-forest{
 	padding-bottom: 20px;
 	background: url(../img/bg-field.png) no-repeat bottom center;
+}
+
+@media (min-width: 1600px) {
+	.locations{
+		&__sect:not(:nth-child(3n)){margin-right: 116px;}
+		&__sect:not(:nth-child(3n))::after{right: -111px;}
+	}
+}
+
+@media (min-width: 1240px) {
+	.locations{
+		&__sect:not(:nth-child(3n)){margin-right: 116px;}
+		&__sect:not(:nth-child(3n))::after{right: -58px;}
+	}
+}
+
+@media (max-width: 1239px) {
+	.locations{
+		margin-left: -15px;
+		margin-right: -15px;
+
+		&__sect{
+			width: calc(33.33% - 30px);
+			margin-left: 15px;
+			margin-right: 15px;
+		}
+
+		&__sect:not(:nth-child(3n))::after{right: -15px;}
+	}
 }

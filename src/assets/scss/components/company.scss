@@ -104,3 +104,19 @@
 	border-radius: 20px;
 	overflow: hidden;
 }
+
+@media (max-width: 1239px) {
+	.company{
+		&__content{padding-right: 0;}
+		&__map{padding-left: 0;}
+	}
+}
+
+@media (max-width: 991px) {
+	.company{
+		margin: 100px 0 80px;
+		.anim-tree{display: none;}
+	}
+
+	.info{font-size: 1.6rem;}
+}

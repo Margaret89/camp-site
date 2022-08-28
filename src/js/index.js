@@ -1,4 +1,4 @@
-import {$, AirDatepicker, Fancybox} from './common';
+import {$, AirDatepicker, Fancybox, Inputmask} from './common';
 
 // Календарь
 if($('.js-calendar').length){
@@ -46,6 +46,16 @@ if($('.js-calendar').length){
 			}
 		}
 	})
+
+	$('.js-calendar-field').on('click', function(){
+		$(this).closest('.js-calendar').find('.js-calendar-main').toggleClass('open');
+	});
+
+	$(document).on('click', function (e) {
+		if ($(e.target).closest('.js-calendar').length) {return;}
+		// клик снаружи элемента
+		$('.js-calendar-main').removeClass('open');
+	});
 }
 
 // unwrap block
@@ -103,7 +113,15 @@ if($('.js-slider-photo').length){
 			arrows: false,
 			dots: true,
 			// centerMode: true,
-			focusOnSelect: true
+			focusOnSelect: true,
+			responsive: [
+				{
+					breakpoint: 992,
+					settings: {
+						slidesToShow: 5,
+					}
+				},
+			]
 		});
 
 		$('.js-slider-photo').slick('slickGoTo', $(this).data('item'));
@@ -136,21 +154,24 @@ if($('.js-review-slider').length){
 		prevArrow: '<button id="prev" type="button" class="btn-arr btn-arr_left"><svg class="icon ic-arr-left ic-stroke" width="12" height="22"><use xlink:href="/assets/sprites/sprite.svg#ic-arr-left"></use></svg></button>',
 		nextArrow: '<button id="next" type="button" class="btn-arr btn-arr_right"><svg class="icon ic-arr-right ic-stroke" width="12" height="22"><use xlink:href="/assets/sprites/sprite.svg#ic-arr-right"></use></svg></button>',
 		appendArrows: $('.js-btn-review-slider'),
-		// responsive: [
-		// 	{
-		// 		breakpoint: 768,
-		// 		settings: {
-		// 			slidesToShow: 2,
-		// 			slidesToScroll: 2,
-		// 		}
-		// 	},
-		// 	{
-		// 		breakpoint: 480,
-		// 		settings: {
-		// 			slidesToShow: 1,
-		// 			slidesToScroll: 1,
-		// 		}
-		// 	},
-		// 	]
+		responsive: [
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+				}
+			},
+		]
 	});
 }
+
+// Открыть/Закрыть мобильное меню
+$('.js-open-menu').on('click',function(){
+	$(this).toggleClass('active');
+	$('.js-header-wrap').toggleClass('open');
+	$('.js-body').toggleClass('no-scroll');
+});
+
+// Маска для телефона
+Inputmask('+7 (999) 999-9999').mask('.js-phone');
