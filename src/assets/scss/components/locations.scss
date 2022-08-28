@@ -5,13 +5,22 @@
 	&__content{
 		background: #fff;
 		border-radius: 20px;
-		padding: 80px 60px;
+		padding: 98px 72px 80px;
+		position: relative;
+
+		.anim-tree{
+			position: absolute;
+			top: 42px;
+			right: 12px;
+		}
 	}
 }
 
 .locations{
 	display: flex;
 	flex-wrap: wrap;
+
+	&__sect{position: relative;}
 
 	&__sect:not(:nth-child(3n)){
 		margin-right: 222px;
@@ -31,15 +40,16 @@
 
 	&__label{
 		@include font(none, bold, 1.6rem, 1.75, $color-dark);
-		margin-bottom: 5px;
 	}
 
 	&__text{
 		@include font(none, none, 1.6rem, 1.75, none);
 	}
+
+	&__item:not(:last-child){margin-bottom: 20px;}
 }
 
 .bg-forest{
-	padding-bottom: 1px;
-	background: url(../img/bg-field.jpg) no-repeat bottom center;
+	padding-bottom: 20px;
+	background: url(../img/bg-field.png) no-repeat bottom center;
 }

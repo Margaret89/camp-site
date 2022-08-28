@@ -1,6 +1,6 @@
 /*-------------- lists -----------------*/
 .list-dot{
-	padding-left: 30px;
+	padding-left: 0;
 
 	li{
 		list-style: none;
@@ -20,20 +20,27 @@
 		margin-right: 6px;
 	}
 
-	li:not(:last-child){margin-bottom: 8px;}
+	li:not(:last-child){margin-bottom: 20px;}
 }
 
 .list-num{
-	counter-reset: li;
-	list-style: none;
-	counter-reset: li;
-	padding-left: 15px;
+	list-style-type: none;
+	counter-reset: num;
+	padding-left: 0;
 
 	li{
 		list-style: none;
 		position: relative;
-		padding-left: 10px;
+		padding-left: 0;
+
+		&::before{
+			content: '0.'counter(num); 
+			counter-increment: num;
+			font-weight: 600;
+			color: $color-green;
+			margin-right: 10px;
+		}
 	}
 
-	li:not(:last-child){margin-bottom: 8px;}
+	li:not(:last-child){margin-bottom: 20px;}
 }

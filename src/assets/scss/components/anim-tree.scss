@@ -1,6 +1,145 @@
 /*-------------- anim-tree -----------------*/
+@keyframes tree-two {
+	from {fill: rgba(94, 98, 130, 0.2);}
+	65% {fill: rgba(94, 98, 130, 0.2);}
+	66% {fill: $color-green;}
+	to {fill: $color-green;}
+}
+
+@keyframes tree-three {
+	from {fill: rgba(94, 98, 130, 0.2);}
+	21% {fill: rgba(94, 98, 130, 0.2);}
+	22% {fill: $color-green;}
+	to {fill: $color-green;}
+}
+
+@keyframes tree-four {
+	from {fill: rgba(94, 98, 130, 0.2);}
+	54% {fill: rgba(94, 98, 130, 0.2);}
+	55% {fill: $color-green;}
+	to {fill: $color-green;}
+}
+
+@keyframes tree-five {
+	from {fill: rgba(94, 98, 130, 0.2);}
+	10% {fill: rgba(94, 98, 130, 0.2);}
+	11% {fill: $color-green;}
+	to {fill: $color-green;}
+}
+
+@keyframes tree-six {
+	from {fill: rgba(94, 98, 130, 0.2);}
+	76% {fill: rgba(94, 98, 130, 0.2);}
+	77% {fill: $color-green;}
+	to {fill: $color-green;}
+}
+
+@keyframes tree-seven {
+	from {fill: rgba(94, 98, 130, 0.2);}
+	32% {fill: rgba(94, 98, 130, 0.2);}
+	33% {fill: $color-green;}
+	to {fill: $color-green;}
+}
+
+@keyframes tree-eight {
+	from {fill: rgba(94, 98, 130, 0.2);}
+	87% {fill: rgba(94, 98, 130, 0.2);}
+	88% {fill: $color-green;}
+	to {fill: $color-green;}
+}
+
+@keyframes tree-nine {
+	from {fill: rgba(94, 98, 130, 0.2);}
+	43% {fill: rgba(94, 98, 130, 0.2);}
+	44% {fill: $color-green;}
+	to {fill: $color-green;}
+}
+
+@keyframes tree-one-red {
+	from {fill: rgba(94, 98, 130, 0.2);}
+	65% {fill: rgba(94, 98, 130, 0.2);}
+	66% {fill: $color-red;}
+	to {fill: $color-red;}
+}
+
+@keyframes tree-two-red {
+	from {fill: rgba(94, 98, 130, 0.2);}
+	21% {fill: rgba(94, 98, 130, 0.2);}
+	22% {fill: $color-red;}
+	to {fill: $color-red;}
+}
+
+@keyframes tree-three-red {
+	from {fill: rgba(94, 98, 130, 0.2);}
+	54% {fill: rgba(94, 98, 130, 0.2);}
+	55% {fill: $color-red;}
+	to {fill: $color-red;}
+}
+
+@keyframes tree-four-red {
+	from {fill: rgba(94, 98, 130, 0.2);}
+	10% {fill: rgba(94, 98, 130, 0.2);}
+	11% {fill: $color-red;}
+	to {fill: $color-red;}
+}
+
+@keyframes tree-five-red {
+	from {fill: rgba(94, 98, 130, 0.2);}
+	76% {fill: rgba(94, 98, 130, 0.2);}
+	77% {fill: $color-red;}
+	to {fill: $color-red;}
+}
+
+@keyframes tree-six-red {
+	from {fill: rgba(94, 98, 130, 0.2);}
+	32% {fill: rgba(94, 98, 130, 0.2);}
+	33% {fill: $color-red;}
+	to {fill: $color-red;}
+}
+
+@keyframes tree-eight-red {
+	from {fill: rgba(94, 98, 130, 0.2);}
+	87% {fill: rgba(94, 98, 130, 0.2);}
+	88% {fill: $color-red;}
+	to {fill: $color-red;}
+}
+
+@keyframes tree-nine-red {
+	from {fill: rgba(94, 98, 130, 0.2);}
+	43% {fill: rgba(94, 98, 130, 0.2);}
+	44% {fill: $color-red;}
+	to {fill: $color-red;}
+}
+
 .anim-tree{
 	display: grid;
 	grid-template-columns: repeat(3,1fr);
 	grid-template-rows: repeat(3,1fr);
+	width: 135px;
+	height: 135px;
+
+	.icon{fill: rgba(94, 98, 130, 0.2);}
+
+	&_green{
+		.icon:nth-child(2){animation: tree-two 4s infinite ease-in-out;}
+		.icon:nth-child(3){animation: tree-three 4s infinite ease-in-out;}
+		.icon:nth-child(4){animation: tree-four 4s infinite ease-in-out;}
+		.icon:nth-child(5){animation: tree-five 4s infinite ease-in-out;}
+		.icon:nth-child(6){animation: tree-six 4s infinite ease-in-out;}
+		.icon:nth-child(7){animation: tree-seven 4s infinite ease-in-out;}
+		.icon:nth-child(8){animation: tree-eight 4s infinite ease-in-out;}
+		.icon:nth-child(9){animation: tree-nine 4s infinite ease-in-out;}
+	}
+
+	&_red{
+		.icon:nth-child(1){animation: tree-one-red 4s infinite ease-in-out;}
+		.icon:nth-child(2){animation: tree-two-red 4s infinite ease-in-out;}
+		.icon:nth-child(3){animation: tree-three-red 4s infinite ease-in-out;}
+		.icon:nth-child(4){animation: tree-four-red 4s infinite ease-in-out;}
+		.icon:nth-child(5){animation: tree-five-red 4s infinite ease-in-out;}
+		.icon:nth-child(6){animation: tree-six-red 4s infinite ease-in-out;}
+		.icon:nth-child(8){animation: tree-eight-red 4s infinite ease-in-out;}
+		.icon:nth-child(9){animation: tree-nine-red 4s infinite ease-in-out;}
+	}
 }
+

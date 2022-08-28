@@ -1,14 +1,91 @@
 /*-------------- calendar -----------------*/
 .calendar{
-	&__item{margin-bottom: 20px;}
+	&__item{
+		margin-bottom: 36px;
+		padding: 0 30px;
+	}
 
 	&__label{
 		@include font(none, none, 1.2rem, 1.2, $color-text);
 		text-transform: uppercase;
 		letter-spacing: 1px;
-		margin-bottom: 10px;
+		margin-bottom: 12px;
+	}
+
+	&__main{
+		.air-datepicker.-inline-{width: 100%;}
+		margin: -20px 0 -70px;
 	}
 }
+
+.air-datepicker.-inline-{
+	padding: 33px 40px;
+	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+	border-radius: 10px;
+	border: none;
+	box-sizing: border-box;
+}
+
+.air-datepicker-body--day-name{
+	@include font(none, bold, 1.2rem, none, $color-green);
+}
+
+.air-datepicker-nav--action{
+	border-radius: 50%;
+
+	svg{
+		width: 16px;
+		height: 16px;
+	}
+
+	path{
+		fill: $color-green;
+		stroke: none;
+	}
+}
+
+.air-datepicker-nav--title{
+	@include font(none, bold, 1.4rem, 1.2, $color-dark);
+	text-transform: uppercase;
+
+	i{color: $color-dark;}
+}
+
+.air-datepicker--navigation{margin-bottom: 20px;}
+.air-datepicker-nav{border: none;}
+
+.air-datepicker-cell{
+	width: 40px;
+	height: 40px;
+}
+
+.air-datepicker-cell.-current-{
+	background: linear-gradient(180deg, #47B560 0%, #B5D7B5 100%);
+	color: #fff;
+}
+
+.air-datepicker-cell.-focus-{background: rgba(232, 245,232, 0.9);}
+
+.air-datepicker-cell,
+.air-datepicker-cell.-range-to-.-range-from-,
+.air-datepicker-cell.-range-to-.-range-to-,
+.air-datepicker-cell.-selected-.-range-from-{
+	border-radius: 50%;
+	border: none;
+}
+
+.air-datepicker-cell.-selected-.-range-from-,
+.air-datepicker-cell.-selected-.-range-to-{
+	background: $color-green;
+	border: none;
+}
+
+.air-datepicker-cell.-in-range-,
+.air-datepicker-cell.-in-range-:hover{
+	background: rgba(232, 245,232, 0.9);
+}
+
+.air-datepicker-body--cells.-days-{grid-auto-rows: 42px;}
 
 .calendar-field{
 	display: flex;
@@ -17,7 +94,7 @@
 	min-height: 5.6rem;
 	border-radius: 10px;
 	background: #fff;
-	padding: 10px 15px;
+	padding: 8px 20px;
 
 	&__icon{
 		flex-shrink: 0;
@@ -33,8 +110,7 @@
 
 	&__day{
 		@include font(none, none, 1.4rem, 1.2, $color-text);
+		text-transform: lowercase;
 		margin-top: 5px;
 	}
-
-	&__main{margin: -10px 0 -60px;}
 }

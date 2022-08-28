@@ -16,11 +16,14 @@
 	&__content{
 		display: flex;
 		border-radius: 20px;
+		position: relative;
 	}
 
 	&__img{
+		width: 100%;
 		background: url(../img/party.jpg) no-repeat center;
 		background-size: cover;
+		border-radius: 0 20px 20px 0;
 	}
 
 	.calendar{
@@ -32,5 +35,6 @@
 	width: 440px;
 	flex-shrink: 0;
 	background: linear-gradient(130.44deg, #2F5A43 0.8%, #91C919 184.11%), linear-gradient(157.16deg, #5B9274 -7.19%, #91C919 134.6%), #477B44;
-	padding: 80px 40px 0;
+	padding: 80px 30px 0;
+	border-radius: 20px 0 0 20px;
 }

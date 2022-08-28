@@ -1,10 +1,28 @@
 /*-------------- services -----------------*/
+.services-wrap{
+	padding: 117px 0 56px;
+	position: relative;
+	background: #FAF9FE;
+
+	.anim-tree{
+		position: absolute;
+		top: -28px;
+		left: 55px;
+
+		.icon{order: 4;}
+		.icon:nth-child(2){order: 1;}
+		.icon:nth-child(3){order: 2;}
+		&__empty{order: 3;}
+	}
+}
+
 .services{
 	column-count: 3;
 	column-gap: 30px;
 
 	&__sect{
-		margin-bottom: 40px;
+		display: inline-block;
+		margin-bottom: 65px;
 		padding: 0 10px;
 	}
 
@@ -13,6 +31,7 @@
 		@include font(none, 600, 1.8rem, 1.4, $color-dark);
 		margin-bottom: 20px;
 		position: relative;
+		z-index: 1;
 
 		&::before{
 			content: '';
@@ -21,9 +40,10 @@
 			height: 30px;
 			border-radius: 50%;
 			position: absolute;
-			top: 0;
+			top: -5px;
 			left: -10px;
 			opacity: 0.7;
+			z-index: -1;
 		}
 	}
 
@@ -40,19 +60,20 @@
 		&::before{
 			content: '';
 			display: inline-block;
+			vertical-align: middle;
 			width: 8px;
 			height: 6px;
 			background: url(../img/check.png) no-repeat center;
 			background-size: contain;
 			margin-left: -20px;
 			margin-right: 12px;
+			margin-top: -6px;
 		}
 	}
 
-	&__item:not(:last-child){margin-bottom: 15px;}
+	&__item:not(:last-child){margin-bottom: 14px;}
 
 	&__note{
 		@include font(none, none, 1.4rem, 1.5, $color-green);
-		margin-top: 5px;
 	}
 }

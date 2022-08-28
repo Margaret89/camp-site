@@ -2,7 +2,7 @@ html,
 body{
 	background: #fff;
 	font-family: $font-site;
-	@include font(normal, normal, 10px, 1.5, $color-text);
+	@include font(normal, normal, 10px, 1.75, $color-text);
 	box-sizing:border-box;
 }
 
@@ -44,6 +44,7 @@ h5,.h5
 
 h1,.h1{
 	font-size: 4.2rem;
+	font-weight: 500;
 	margin-bottom: 6rem;
 }
 
@@ -92,6 +93,7 @@ button.btn{
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+	column-gap: 15px;
 	height: 5.8rem;
 	min-width: 200px;
 	background: $color-green;
@@ -107,7 +109,17 @@ button.btn{
 	z-index: 1;
 	overflow: hidden;
 
-	&:hover{color: #fff;}
+	.icon{
+		fill: $color-green;
+		transition: fill 0.2s ease 0s;
+	}
+	
+	&:hover{
+		color: #fff;
+
+		.icon{fill: #fff;}
+	}
+	
 
 	&_border{
 		background: transparent;
@@ -120,6 +132,8 @@ button.btn{
 	&_white{
 		background: #fff;
 		color: $color-green;
+
+		.icon{fill: $color-green;}
 	}
 	
 	&_border.btn_white{
@@ -134,11 +148,15 @@ button.btn{
 		background: #fff;
 		color: $color-green;
 		border: 2px solid $color-green;
+
+		.icon{fill: $color-green;}
 	}
 
 	&_white-border:hover{
 		border-color: $color-light-green;
 		color: #fff;
+
+		.icon{fill: #fff;}
 	}
 }
 
@@ -182,5 +200,5 @@ button.btn{
 .img-left{
 	float: right;
 	border-radius: 20px;
-	margin: 0 0 30px 30px;
+	margin: 0 0 100px 120px;
 }

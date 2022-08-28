@@ -17,8 +17,8 @@ block content
 
 										.calendar-field
 											.calendar-field__content
-												.calendar__date.js-calendar-date-start
-												.calendar__day.js-calendar-day-start
+												.calendar-field__date.js-calendar-date-start
+												.calendar-field__day.js-calendar-day-start
 
 											.calendar-field__icon
 												+svg('ic-calendar','ic-calendar', '24', '24')
@@ -28,8 +28,8 @@ block content
 
 										.calendar-field
 											.calendar-field__content
-												.calendar__date.js-calendar-date-end
-												.calendar__day.js-calendar-day-end
+												.calendar-field__date.js-calendar-date-end
+												.calendar-field__day.js-calendar-day-end
 
 											.calendar-field__icon
 												+svg('ic-calendar','ic-calendar', '24', '24')
@@ -42,7 +42,8 @@ block content
 			.container
 				.row
 					.col-12
-						.anim-tree
+						.anim-tree.anim-tree_green
+							.anim-tree__empty
 							+svg('ic-tree','ic-tree', '16', '16')
 							+svg('ic-tree','ic-tree', '16', '16')
 							+svg('ic-tree','ic-tree', '16', '16')
@@ -56,7 +57,7 @@ block content
 					.col-6
 						.company__content
 							.company__info
-								h2 База отдыха «Лесная купель»
+								h2 База Отдыха «Лесная купель» 
 
 								.info.js-info
 									.info__preview
@@ -109,79 +110,87 @@ block content
 												.rating-block__text Оценок : 10
 
 					.col-6
-						h2 Смотреть на карте
+						.company__map
+							h2 Смотреть на карте
 
-						.map
-							iframe(src='https://yandex.ru/map-widget/v1/?um=constructor%3A81f52ce5d2f3f39c9100bb90c3175f3e4174d67549767b3c2a77eb3182d62ba8&source=constructor' width='100%' height='546' frameborder='0')
+							.map
+								iframe(src='https://yandex.ru/map-widget/v1/?um=constructor%3A81f52ce5d2f3f39c9100bb90c3175f3e4174d67549767b3c2a77eb3182d62ba8&source=constructor' width='100%' height='546' frameborder='0')
 
 		.bg-forest
 			section.gallery-wrap
 				.container
 					.row
 						.col-12
+							h2.h1 Галерея
+
 							.gallery
-								a(href="#", style="background-image: url(assets/img/gallery1.jpg)").gallery__item
-								a(href="#", style="background-image: url(assets/img/gallery2.jpg)").gallery__item
-								a(href="#", style="background-image: url(assets/img/gallery3.jpg)").gallery__item
-								a(href="#", style="background-image: url(assets/img/gallery4.jpg)").gallery__item
-								a(href="#", style="background-image: url(assets/img/gallery5.jpg)").gallery__item
+								span(style="background-image: url(assets/img/gallery1.jpg)", data-item="0").gallery__item.js-gallery-item
+								span(style="background-image: url(assets/img/gallery2.jpg)", data-item="1").gallery__item.js-gallery-item
+								span(style="background-image: url(assets/img/gallery3.jpg)", data-item="2").gallery__item.js-gallery-item
+								span(style="background-image: url(assets/img/gallery4.jpg)", data-item="3").gallery__item.js-gallery-item
+								span(style="background-image: url(assets/img/gallery5.jpg)", data-item="4").gallery__item.js-gallery-item
 									.btn.btn_white
 										+svg('ic-dots','ic-dots', '21', '22')
 										|еще 50 фото
 
-							.popup-gallery
+							.popup-gallery#popup-gallery
 								.slider-photo.js-slider-photo
 									-
 										var list=[
-											{img:'gallery1'},
-											{img:'gallery2'},
-											{img:'gallery3'},
-											{img:'gallery4'},
-											{img:'gallery5'},
-											{img:'gallery6'},
-											{img:'gallery1'},
-											{img:'gallery4'},
-											{img:'gallery5'},
-											{img:'gallery2'},
-											{img:'gallery3'},
+											{img:'gallery1.jpg'},
+											{img:'gallery2.jpg'},
+											{img:'gallery3.jpg'},
+											{img:'gallery4.jpg'},
+											{img:'gallery5.jpg'},
+											{img:'gallery1.jpg'},
+											{img:'gallery4.jpg'},
+											{img:'gallery5.jpg'},
+											{img:'gallery2.jpg'},
+											{img:'gallery3.jpg'},
 										]
 									each item in list
 										.slider-photo__item
 											img(src="assets/img/"+item.img, alt="")
 
+								.nav-count
+									span.nav-count__cur.js-slider-photo-count-cur 01
+									|/
+									span.js-slider-photo-count 1
+								
 								.slider-photo-thumb.js-slider-photo-thumb
 									-
 										var list=[
-											{img:'gallery1'},
-											{img:'gallery2'},
-											{img:'gallery3'},
-											{img:'gallery4'},
-											{img:'gallery5'},
-											{img:'gallery6'},
-											{img:'gallery1'},
-											{img:'gallery4'},
-											{img:'gallery5'},
-											{img:'gallery2'},
-											{img:'gallery3'},
+											{img:'gallery1.jpg'},
+											{img:'gallery2.jpg'},
+											{img:'gallery3.jpg'},
+											{img:'gallery4.jpg'},
+											{img:'gallery5.jpg'},
+											{img:'gallery1.jpg'},
+											{img:'gallery4.jpg'},
+											{img:'gallery5.jpg'},
+											{img:'gallery2.jpg'},
+											{img:'gallery3.jpg'},
 										]
 									each item in list
-										.slider-photo-thumb__item(style="background-image: url(assets/img/"+item.img+")")
+										.slider-photo-thumb__item
+											.slider-photo-thumb__img(style="background-image: url(assets/img/"+item.img+")")
 
 			section.locations-wrap
 				.container
 					.row
 						.col-12
-							.anim-tree
-								+svg('ic-tree','ic-tree', '16', '16')
-								+svg('ic-tree','ic-tree', '16', '16')
-								+svg('ic-tree','ic-tree', '16', '16')
-								+svg('ic-tree','ic-tree', '16', '16')
-								+svg('ic-tree','ic-tree', '16', '16')
-								+svg('ic-tree','ic-tree', '16', '16')
-								+svg('ic-tree','ic-tree', '16', '16')
-								+svg('ic-tree','ic-tree', '16', '16')
-
 							.locations-wrap__content
+								.anim-tree.anim-tree_red
+									+svg('ic-tree','ic-tree', '16', '16')
+									+svg('ic-tree','ic-tree', '16', '16')
+									+svg('ic-tree','ic-tree', '16', '16')
+									+svg('ic-tree','ic-tree', '16', '16')
+									+svg('ic-tree','ic-tree', '16', '16')
+									+svg('ic-tree','ic-tree', '16', '16')
+									.anim-tree__empty
+									+svg('ic-tree','ic-tree', '16', '16')
+									+svg('ic-tree','ic-tree', '16', '16')
+
 								.h1 Локации
 
 								.locations
@@ -218,7 +227,8 @@ block content
 		.container
 			.row
 				.col-12
-					.anim-tree
+					.anim-tree.anim-tree_green
+						.anim-tree__empty
 						+svg('ic-tree','ic-tree', '16', '16')
 						+svg('ic-tree','ic-tree', '16', '16')
 						+svg('ic-tree','ic-tree', '16', '16')
@@ -326,8 +336,8 @@ block content
 									each sub in sect.sub
 										.services__item= sub.text
 
-										if(sub.note)
-											.services__note= sub.note
+											if(sub.note)
+												.services__note= sub.note
 
 	section.path-wrap
 		.container
@@ -335,29 +345,26 @@ block content
 				.col-12
 					h2.h1 Как добраться
 
-			.row
-				.col-4
-					.path-item
-						.path-item__title На автомобиле:
-						.path-item__text 15 км по Горьковскому шоссе, после указателя «Ногинский район», проехав до ближайшего разворота, развернуться и ехать в обратном направлении. Далее повернуть с трассы направо и ехать через коттеджный поселок в мкр. Шевелкино-4 до центральных ворот базы отдыха.
+					.path-list
+						.path-item
+							.path-item__title На автомобиле:
+							.path-item__text 15 км по Горьковскому шоссе, после указателя «Ногинский район», проехав до ближайшего разворота, развернуться и ехать в обратном направлении. Далее повернуть с трассы направо и ехать через коттеджный поселок в мкр. Шевелкино-4 до центральных ворот базы отдыха.
 
-				.col-4
-					.path-item
-						.path-item__title Общественным транспортом:
-						.path-item__text
-							|от м. Партизанская — автобусы № 322 и № 444; экспрессы № 322, 382, 444, 445, 375, 386, 391;
-							br
-							|от м. Измайловская - автобус №588;
-							br
-							|от м. Перово — автобус № 587 и маршрутное такси № 886 до остановки «Зеленый», затем необходимо перейти Горьковское шоссе, далее – пешком, следуя указателям, около 2 км до базы отдыха.
+						.path-item
+							.path-item__title Общественным транспортом:
+							.path-item__text
+								|от м. Партизанская — автобусы № 322 и № 444; экспрессы № 322, 382, 444, 445, 375, 386, 391;
+								br
+								|от м. Измайловская - автобус №588;
+								br
+								|от м. Перово — автобус № 587 и маршрутное такси № 886 до остановки «Зеленый», затем необходимо перейти Горьковское шоссе, далее – пешком, следуя указателям, около 2 км до базы отдыха.
 
-				.col-4
-					.path-item
-						.path-item__title Из Московской области:
-						.path-item__text Любой автобус или маршрутное такси, следующее в Москву по Горьковскому шоссе до остановки «Зеленый». Далее – пешком, следуя указателям, около 2 км до базы отдыха.
+						.path-item
+							.path-item__title Из Московской области:
+							.path-item__text Любой автобус или маршрутное такси, следующее в Москву по Горьковскому шоссе до остановки «Зеленый». Далее – пешком, следуя указателям, около 2 км до базы отдыха.
 
-						.path-item__subtitle Скопировать координаты:
-						.path-item__text 55.827421, 38.076584
+							.path-item__subtitle Скопировать координаты:
+							.path-item__text 55.827421, 38.076584
 
 			.row
 				.col-12
@@ -368,7 +375,8 @@ block content
 		.container
 			.row
 				.col-12
-					.anim-tree
+					.anim-tree.anim-tree_green
+						.anim-tree__empty
 						+svg('ic-tree','ic-tree', '16', '16')
 						+svg('ic-tree','ic-tree', '16', '16')
 						+svg('ic-tree','ic-tree', '16', '16')
@@ -459,23 +467,28 @@ block content
 								.unwrap-block__icon
 									+svg('ic-question','ic-question', '20', '31')
 
-								.unwrap-block__title Заголовок
+								.unwrap-block__title= item.title
 
 								.unwrap-block__btn
 
-							.unwrap-block__content.js-unwrap-content Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.
+							.unwrap-block__content.js-unwrap-content 
+								p
+									b Ответ :
 
-	secttion.about
+								p= item.text
+
+	section.about
 		.container
 			.row
 				.col-12
-					.anim-tree
+					.anim-tree.anim-tree_red
 						+svg('ic-tree','ic-tree', '16', '16')
 						+svg('ic-tree','ic-tree', '16', '16')
 						+svg('ic-tree','ic-tree', '16', '16')
 						+svg('ic-tree','ic-tree', '16', '16')
 						+svg('ic-tree','ic-tree', '16', '16')
 						+svg('ic-tree','ic-tree', '16', '16')
+						.anim-tree__empty
 						+svg('ic-tree','ic-tree', '16', '16')
 						+svg('ic-tree','ic-tree', '16', '16')
 
@@ -499,6 +512,7 @@ block content
 
 					p Главная цель обращения клиента в компанию – быстро получить необходимую сумму под низкий процент. Предпосылки возникновения потребности в деньгах различны:
 
+					br
 					.row
 						.col-3
 							ul.list-dot

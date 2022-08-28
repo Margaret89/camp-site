@@ -1,7 +1,7 @@
 /*-------------- path -----------------*/
 .path-wrap{
-	background: linear-gradient(130.44deg, #2F5A43 0.8%, #91C919 184.11%), linear-gradient(110.77deg, #477B44 5.18%, #6F8A3A 97.44%), linear-gradient(0deg, rgba(1, 2, 2, 0.3), rgba(1, 2, 2, 0.3)), url(61axcy7n.png);
-	padding: 80px 0 0;
+	background: linear-gradient(130.44deg, #2F5A43 0.8%, #91C919 184.11%), linear-gradient(110.77deg, #477B44 5.18%, #6F8A3A 97.44%), linear-gradient(0deg, rgba(1, 2, 2, 0.3), rgba(1, 2, 2, 0.3));
+	padding: 115px 0 0;
 	color: #fff;
 	position: relative;
 
@@ -15,16 +15,29 @@
 		bottom: 0;
 		left: 0;
 	}
+
+	h1, .h1{color: #fff;}
+	.map{margin-top: 36px;}
+}
+
+.path-list{
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 30px;
+	margin-top: -20px;
 }
 
 .path-item{
-	margin-bottom: 20px;
+	width: calc(33.33% - 30px);
+	margin-bottom: 40px;
+	padding: 0 14px;
 
 	&__title{
 		font-family: $font-montserrat;
-		@include font(none, 600, 1.8rem, 1.4, $color-dark);
-		margin-bottom: 10px;
+		@include font(none, 600, 1.8rem, 1.4, #fff);
+		margin-bottom: 18px;
 		position: relative;
+		z-index: 1;
 
 		&::before{
 			content: '';
@@ -33,20 +46,26 @@
 			height: 30px;
 			border-radius: 50%;
 			position: absolute;
-			top: 0;
+			top: -5px;
 			left: -10px;
 			opacity: 0.7;
+			z-index: -1;
 		}
 	}
 
-	&__sect:nth-child(4n+1) &__title::before{background: #79C175;}
-	&__sect:nth-child(4n+2) &__title::before{background: #FFB198;}
-	&__sect:nth-child(4n+3) &__title::before{background: #F0BB1F;}
-	&__sect:nth-child(4n+4) &__title::before{background: #C8CBEE;}
+	&:nth-child(4n+1) &__title::before{background: #79C175;}
+	&:nth-child(4n+2) &__title::before{background: #FFB198;}
+	&:nth-child(4n+3) &__title::before{background: #F0BB1F;}
+	&:nth-child(4n+4) &__title::before{background: #C8CBEE;}
 
 	&__text{
 		@include font(none, none, 1.6rem, 1.5, none);
 	}
 
-	&__subtitle{margin-top: 20px;}
+	&__subtitle{
+		font-family: $font-montserrat;
+		@include font(none, 600, 1.8rem, 1.4, #fff);
+		margin-top: 20px;
+		margin-bottom: 18px;
+	}
 }

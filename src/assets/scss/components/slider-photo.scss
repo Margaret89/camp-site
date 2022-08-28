@@ -1,1 +1,103 @@
 /*-------------- slider-photo -----------------*/
+.slider-photo{
+	display: none;
+	padding: 0 200px;
+	
+	&.slick-initialized{display: block;}
+	.slick-track{display: flex;}
+	.slick-slide{height: auto;}
+
+	.slick-slide > div,
+	&__item{
+		height: 100%;
+	}
+
+	&__item{
+		display: flex!important;
+		align-items: center;
+		justify-content: center;
+
+		img{
+			max-height: 516px;
+			border-radius: 20px;
+		}
+	}
+
+	.btn-arr{
+		&_left{left: 100px;}
+		&_right{right: 100px;}
+	}
+}
+
+.slider-photo-thumb{
+	display: none;
+	margin: 20px -6px 0;
+
+	&.slick-initialized{display: block;}
+	.slick-slide{margin: 0 6px;}
+
+	&__item{
+		padding-bottom: 100%;
+		
+		position: relative;
+		cursor: pointer;
+
+		&::after{
+			content: '';
+			display: block;
+			width: 100%;
+			height: 100%;
+			background: rgba(255,255,255,0.5);
+			position: absolute;
+			top: 0;
+			left: 0;
+			transition: opacity 0.2s ease 0s;
+		}
+	}
+
+	&__img{
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		border-radius: 5px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.slick-current &__item::after,
+	&__item:hover::after{
+		opacity: 0;
+	}
+
+	.slick-dots{
+		flex-wrap: nowrap;
+		background: #F7F6FC;
+		border-radius: 3px;
+		margin-top: 36px;
+
+		li{width: 100%;}
+
+		button{
+			width: 100%;
+			height: 6px;
+			border-radius: 3px;
+			margin: 0;
+			background: transparent;
+		}
+
+		button:hover,
+		.slick-active button{
+			background: $color-green;
+		}
+	}
+}
+
+.nav-count{
+	font-family: $font-montserrat;
+	@include font(none, none, 1.8rem, 1.2, none);
+	text-align: center;
+	margin: 40px 0 60px;
+}
