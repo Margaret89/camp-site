@@ -67,3 +67,22 @@
 		line-height: 1.75;
 	}
 }
+
+@media (max-width: 767px) {
+	.conditions-wrap{margin: 62px 0 65px;}
+
+	.conditions{
+		&__list{column-count: 1;}
+		&__item{padding: 0 10px;}
+		&__title{font-size: 1.6rem;}
+		&__text{font-size: 1.4rem}
+		&__note{padding: 0 10px;}
+		&__bottom{margin-top: -10px;}
+
+		&__star{
+			padding: 0;
+			line-height: 2rem;
+			margin-bottom: 0;
+		}
+	}
+}

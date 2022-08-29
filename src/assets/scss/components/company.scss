@@ -105,6 +105,19 @@
 	overflow: hidden;
 }
 
+.map-btn{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 56px;
+	height: 56px;
+	border-radius: 10px;
+	background: $color-green;
+	cursor: pointer;
+
+	.icon{fill: #fff;}
+}
+
 @media (max-width: 1239px) {
 	.company{
 		&__content{padding-right: 0;}
@@ -116,7 +129,85 @@
 	.company{
 		margin: 100px 0 80px;
 		.anim-tree{display: none;}
+
+		&__map-info{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 40px;
+
+			h2,.h2{
+				color: $color-green;
+				margin-bottom: 0;
+			}
+
+			.map-btn{
+				flex-shrink: 0;
+				margin-left: 23px;
+			}
+		}
+
+		.map{display: none;}
 	}
 
 	.info{font-size: 1.6rem;}
+}
+
+@media (max-width: 767px) {
+	.company{
+		margin: 60px 0 35px;
+
+		&__info{
+			h2, .h2{margin-bottom: 25px;}
+		}
+		
+		.rating-block-wrap{margin-top: 60px;}
+	}
+
+	.info{
+		font-size: 1.4rem;
+		line-height: 1.7;
+
+		&__bottom{margin-top: 40px;}
+	}
+
+	.count-info{
+		margin-top: 30px;
+		margin-bottom: 30px;
+
+		&__num{
+			font-size: 3rem;
+			margin-right: 7px;
+		}
+
+		&__text{
+			font-size: 1.3rem;
+			padding-bottom: 3px;
+		}
+
+		&__item:not(:last-child){margin-right: 20px;}
+
+		&__item:not(:last-child)::after{
+			width: 4px;
+			height: 4px;
+			right: -12px;
+		}
+	}
+
+	.rating-block-wrap{
+		h2, .h2{margin-bottom: 28px;}
+	}
+
+	.rating-block{
+		display: block;
+		margin-left: 0;
+		margin-right: 0;
+
+		&__item{
+			display: flex;
+			margin: 0 0 20px;
+		}
+
+		&__icon{margin-right: 5px;}
+	}
 }

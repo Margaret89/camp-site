@@ -37,7 +37,7 @@ block content
 									.calendar__main.js-calendar-main
 
 								.quest-form__fields.d-md-none
-									.quest-form__item
+									.quest-form__item.quest-form__item_short
 										.quest-form__label Гостей
 										.quest-form__field
 											select.js-select
@@ -72,7 +72,7 @@ block content
 							+svg('ic-tree','ic-tree', '16', '16')
 
 				.row
-					.col-lg-6
+					.col-lg-6.order-2.order-lg-1
 						.company__content
 							.company__info
 								h2 База Отдыха «Лесная купель» 
@@ -127,11 +127,15 @@ block content
 
 												.rating-block__text Оценок : 10
 
-					.col-6.d-none.d-lg-block
+					.col-lg-6.order-1.order-lg-2
 						.company__map
-							h2 Смотреть на карте
+							.company__map-info
+								h2 Смотреть на карте
 
-							.map
+								.map-btn.d-lg-none(data-fancybox="", data-src="#company-map")
+									+svg('ic-address-stroke','ic-address-stroke', '22', '28')
+							
+							.map#company-map
 								iframe(src='https://yandex.ru/map-widget/v1/?um=constructor%3A81f52ce5d2f3f39c9100bb90c3175f3e4174d67549767b3c2a77eb3182d62ba8&source=constructor' width='100%' height='546' frameborder='0')
 
 		.bg-forest
@@ -141,15 +145,21 @@ block content
 						.col-12
 							h2.h1 Галерея
 
-							.gallery
-								span(style="background-image: url(assets/img/gallery1.jpg)", data-item="0").gallery__item.js-gallery-item
-								span(style="background-image: url(assets/img/gallery2.jpg)", data-item="1").gallery__item.js-gallery-item
-								span(style="background-image: url(assets/img/gallery3.jpg)", data-item="2").gallery__item.js-gallery-item
-								span(style="background-image: url(assets/img/gallery4.jpg)", data-item="3").gallery__item.js-gallery-item
-								span(style="background-image: url(assets/img/gallery5.jpg)", data-item="4").gallery__item.js-gallery-item
-									.btn.btn_white
-										+svg('ic-dots','ic-dots', '21', '22')
-										|еще 50 фото
+							.gallery-block
+								.gallery
+									span(style="background-image: url(assets/img/gallery1.jpg)", data-item="0").gallery__item.js-gallery-item
+									span(style="background-image: url(assets/img/gallery2.jpg)", data-item="1").gallery__item.js-gallery-item
+									span(style="background-image: url(assets/img/gallery3.jpg)", data-item="2").gallery__item.js-gallery-item
+									span(style="background-image: url(assets/img/gallery4.jpg)", data-item="3").gallery__item.js-gallery-item
+									span(style="background-image: url(assets/img/gallery5.jpg)", data-item="4").gallery__item.js-gallery-item
+										.btn.btn_white.d-none.d-md-inline-flex
+											+svg('ic-dots','ic-dots', '21', '22')
+											|еще 50 фото
+
+							.gallery-wrap__btn.d-md-none
+								.btn.btn_white-border
+									+svg('ic-dots','ic-dots', '21', '22')
+									|еще 50 фото
 
 							.popup-gallery#popup-gallery
 								.slider-photo.js-slider-photo
@@ -258,7 +268,7 @@ block content
 
 					h2.h1 Услуги
 
-					.services
+					.services.js-services
 						-
 							var list=[
 								{
@@ -356,6 +366,9 @@ block content
 
 											if(sub.note)
 												.services__note= sub.note
+
+						.services__more
+							.services__btn.js-services-btn(data-val="Свернуть...") Еще услуги ...
 
 	section.path-wrap
 		.container
@@ -522,7 +535,7 @@ block content
 
 					p Классный домик и банька супер! Парная в новом состоянии. Случайно нашли баню и поехали. Снимали на сутки. Домик понравился комфортом, дизайном. Администраторы отлично встретили и проводили. Были один раз, но хотим ещё.Классный домик и банька супер! Парная в новом состоянии. Случайно нашли баню и поехали. Снимали на сутки. Домик понравился комфортом, дизайном. Администраторы отлично встретили и проводили. Были один раз, но хотим ещё.Классный домик и банька супер! Парная в новом состоянии. Случайно нашли баню и поехали. Снимали на сутки. Домик понравился комфортом, дизайном. Администраторы отлично встретили и проводили. Были один раз, но хотим ещё.
 
-					h3 Лояльные требования Н3
+					h3 Заголовок Н3
 
 					p Микрозаём — это небольшой кредит наличными, выдаваемый микрокредитными организациями. Больше всего такой вид займа подходит для потребительских нужд, когда деньги требуются срочно и нет возможности у кого-либо взять в долг до зарплаты. Микрозаймы выдаются на непродолжительные сроки и на максимально упрощенных условиях.
 

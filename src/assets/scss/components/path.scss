@@ -74,3 +74,32 @@
 	.path-list{display: block;}
 	.path-item{width: auto;}
 }
+
+@media (max-width: 767px) {
+	.path-wrap{
+		padding: 60px 0 0;
+
+		h2, .h1{margin-bottom: 55px;}
+
+		.map{
+			margin: 0 -20px;
+			border-radius: 0;
+			border: none;
+		}
+	}
+
+	.path-item{
+		padding: 0 10px;
+		margin-bottom: 45px;
+
+		&__title,
+		&__subtitle{
+			font-size: 1.6rem;
+		}
+
+		&__text{
+			font-size: 1.4rem;
+			line-height: 1.7;
+		}
+	}
+}

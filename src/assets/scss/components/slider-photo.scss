@@ -112,3 +112,28 @@
 		}
 	}
 }
+
+@media (max-width: 767px) {
+	.slider-photo{
+		padding: 0;
+
+		.btn-arr{
+			width: 40px;
+			height: 40px;
+			border: none;
+			top: 100%;
+			transform: none;
+			margin-top: 18px;
+		}
+	}
+
+	.nav-count{
+		font-size: 1.6rem;
+		margin: 30px 0 40px;
+	}
+
+	.slider-photo-thumb{
+		margin: 0;
+		.slick-dots{margin: 20px 0 15px;}
+	}
+}

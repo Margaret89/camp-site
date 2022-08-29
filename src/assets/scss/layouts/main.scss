@@ -36,6 +36,8 @@ p{
 	margin-bottom: 2rem;
 }
 
+ul, ol{margin-bottom: 2rem;}
+
 h1,.h1,
 h2,.h2,
 h3,.h3,
@@ -90,9 +92,11 @@ p + h5, p + .h5, ol + h5, ol + .h5, ul + h5, ul + .h5{margin-top: 4rem;}
 
 main{
 	flex: 1 1 auto;
-	padding-bottom: 76px;
+	padding-bottom: 70px;
 	width: 100%;
 }
+
+.last-elem{margin-bottom: -70px;}
 
 .btn,
 input[type="submit"].btn,
@@ -225,5 +229,45 @@ button.btn{
 		max-width: 100%!important;
 		padding-left: 20px;
 		padding-right: 20px;
+	}
+
+	body{
+		font-size: 1.4rem;
+		line-height: 1.7;
+	}
+
+	main{padding-bottom: 40px;}
+	.last-elem{margin-bottom: -40px;}
+	
+
+	h1,.h1,
+	h2,.h2,
+	h3,.h3,
+	h4,.h4,
+	h5,.h5{
+		line-height: 1.3;
+	}
+
+	h1,.h1{
+		font-size: 3.2rem;
+		margin-bottom: 3rem;
+	}
+	
+	h2,.h2{font-size: 2.2rem;}
+	h3,.h3{font-size: 1.8rem;}
+	h4,.h4{font-size: 1.6rem;}
+	h5,.h5{font-size: 1.4rem;}
+
+	.btn,
+	input[type="submit"].btn,
+	button.btn{
+		padding: 0 15px;
+	}
+
+	.img-left{
+		max-width: 100%;
+		float: none;
+		margin: 0 0 30px;
+		border-radius: 10px;
 	}
 }

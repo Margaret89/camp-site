@@ -76,3 +76,31 @@
 		p:last-child{margin-bottom: 0;}
 	}
 }
+
+@media (max-width: 767px) {
+	.unwrap-block{
+		margin-bottom: 45px;
+
+		&__head{
+			font-size: 1.6rem;
+			line-height: 1.25;
+			padding: 30px 15px;
+		}
+
+		&__icon{
+			width: 36px;
+			height: 36px;
+			margin: 0;
+			position: absolute;
+			top: -18px;
+			left: 15px;
+
+			.icon{max-width: 12px;}
+		}
+
+		&__btn::before{width: 25px;}
+		&__btn::after{height: 25px;}
+
+		&__content{padding: 0 15px 30px;}
+	}
+}

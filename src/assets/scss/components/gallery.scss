@@ -72,3 +72,27 @@
 		}
 	}
 }
+
+@media (max-width: 767px) {
+	.gallery-wrap{
+		margin: 35px 0;
+
+		&__btn{
+			margin-top: 40px;
+			text-align: center;
+		}
+	}
+
+	.gallery-block{
+		margin-left: -20px;
+		margin-right: -20px;
+		padding: 0 20px;
+		overflow-x: auto;
+	}
+
+	.gallery{
+		width: 200%;
+		gap: 6px;
+		border-radius: 10px;
+	}
+}

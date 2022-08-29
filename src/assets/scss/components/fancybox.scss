@@ -2,3 +2,9 @@
 .fancybox{
 	&__content{border-radius: 20px;}
 }
+
+@media (max-width: 767px) {
+	.fancybox{
+		&__content{padding: 10px;}
+	}
+}

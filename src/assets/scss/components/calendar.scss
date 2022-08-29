@@ -118,7 +118,13 @@
 @media (max-width: 767px) {
 	.calendar{
 		position: relative;
-		&__item{padding: 0;}
+
+		&__item{
+			padding: 0;
+			margin-bottom: 26px;
+		}
+
+		&__label{letter-spacing: 1.3px;}
 
 		&__main{
 			display: none;

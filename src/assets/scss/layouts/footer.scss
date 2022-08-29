@@ -45,3 +45,23 @@
 		}
 	}
 }
+
+@media (max-width: 767px) {
+	.footer{
+		font-size: 1.6rem;
+		line-height: 1.75;
+		padding: 40px 0;
+
+		&__content{display: block;}
+
+		&__copyright,
+		&__text{
+			width: auto;
+		}
+
+		&__text{margin-top: 30px;}
+		&__contact{margin-top: 22px;}
+
+		.social{margin: 16px -10px 0;}
+	}
+}

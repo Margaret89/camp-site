@@ -83,7 +83,6 @@ if($('.js-info').length){
 	});
 }
 
-
 // Слайдер галереи
 if($('.js-slider-photo').length){
 	$('.js-gallery-item').on('click', function(){
@@ -119,6 +118,12 @@ if($('.js-slider-photo').length){
 					breakpoint: 992,
 					settings: {
 						slidesToShow: 5,
+					}
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 3,
 					}
 				},
 			]
@@ -175,3 +180,21 @@ $('.js-open-menu').on('click',function(){
 
 // Маска для телефона
 Inputmask('+7 (999) 999-9999').mask('.js-phone');
+
+// Оформление нестандартного селекта
+if($('.js-select').length){
+	$('.js-select').select2({
+		minimumResultsForSearch: -1,
+		placeholder: $(this).data('placeholder')
+	});
+}
+
+// Открыть/Закрыть услуги на мобилке
+if($('.js-services-btn').length){
+	$('.js-services-btn').on('click', function(){
+		let btnText = $(this).data('val');
+		$(this).data('val', $(this).text());
+		$(this).text(btnText);
+		$(this).closest('.js-services').toggleClass('open');
+	});
+}

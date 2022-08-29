@@ -76,4 +76,58 @@
 	&__note{
 		@include font(none, none, 1.4rem, 1.5, $color-green);
 	}
+
+	&__more{display: none;}
+}
+
+@media (max-width: 767px) {
+	.services-wrap{padding: 60px 0 56px;}
+
+	.services{
+		column-count: 1;
+
+		&__sect:not(:nth-child(-n+3)){display: none;}
+		&.open &__sect{display: block!important;}
+
+		&__sect{margin-bottom: 45px;}
+		&__title{font-size: 1.6rem}
+
+		&__item{
+			font-size: 1.4rem;
+			padding-left: 15px;
+
+			&::before{
+				margin-left: -15px;
+				margin-right: 7px;
+			}
+		}
+
+		&__more{
+			display: flex;
+			justify-content: flex-end;
+			position: relative;
+			overflow: hidden;
+		}
+
+		&__btn{
+			@include font(none, bold, 1.4rem, 1.2, $color-green);
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			text-align: right;
+			padding-left: 10px;
+			cursor: pointer;
+			position: relative;
+
+			&::after{
+				content: "";
+				display: block;
+				width: 1000px;
+				height: 1px;
+				background: rgba(94,98,130,.3);
+				position: absolute;
+				bottom: 2px;
+				right: 100%;
+			}
+		}
+	}
 }
