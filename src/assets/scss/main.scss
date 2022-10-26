@@ -21,11 +21,33 @@
 @import "utils/fonts";
 @import "utils/reset";
 
-@import "layouts/*";
-@import "components/*";
+// @import "layouts/*";
+// @import "components/*";
 
+@import "layouts/main.scss";
+@import "layouts/header.scss";
+@import "layouts/footer.scss";
 
-
-
-
-
+@import "components/about.scss";
+@import "components/anim-tree.scss";
+@import "components/calendar.scss";
+@import "components/company.scss";
+@import "components/conditions.scss";
+@import "components/fancybox.scss";
+@import "components/faq.scss";
+@import "components/gallery.scss";
+@import "components/icons.scss";
+@import "components/lists.scss";
+@import "components/locations.scss";
+@import "components/path.scss";
+@import "components/quest-form.scss";
+@import "components/rating.scss";
+@import "components/review-slider.scss";
+@import "components/select.scss";
+@import "components/services.scss";
+@import "components/slick.scss";
+@import "components/slider-photo.scss";
+@import "components/social.scss";
+@import "components/top-menu.scss";
+@import "components/type-icon.scss";
+@import "components/unwrap-block.scss";

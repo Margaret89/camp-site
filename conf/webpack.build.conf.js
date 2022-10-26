@@ -5,6 +5,7 @@ const ImageSpritePlugin = require('image-sprite-webpack-plugin');
 const buildWebpackConfig = merge(baseWebpackConfig, {
   // BUILD config
   mode: 'production',
+  // mode: 'development',
   plugins: [
     new ImageSpritePlugin({
       commentOrigin: false,
